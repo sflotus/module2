@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class SpeakNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Input Your Number");
+        System.out.print("Input Your Number: ");
         String valueOnes = "";
         String valueTens = "";
         String valueHundreds = "Hundred";
@@ -46,7 +46,7 @@ public class SpeakNumber {
                 valueOnes = "Seven";
                 break;
             case 8:
-                valueOnes = "Eigh";
+                valueOnes = "Eight";
                 break;
             case 9:
                 valueOnes = "Nine";
