@@ -1,6 +1,7 @@
 package Exercices.ss4_class_object.stop_watch;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class StopWatch {
     private long startTime, endTime;
@@ -11,14 +12,17 @@ public class StopWatch {
 
     public static void main(String[] args) {
         Random random = new Random();
-        int[] arr = new int[1000000];
+        Scanner  scanner = new Scanner(System.in);
+        System.out.println("Nhập vào chiều dài mãng:");
+        int length = Integer.parseInt(scanner.nextLine());
+        int[] arr = new int[length];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = random.nextInt(1000000);
+            arr[i] = random.nextInt(1000);
         }
         StopWatch watch = new StopWatch();
-        watch.getStartTime();
+        watch.star();
         sortArr(arr);
-        watch.getEndTime();
+        watch.end();
         System.out.println("Thời gian thực thi: " + watch.getElapsedTime());
     }
 
