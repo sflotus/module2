@@ -28,13 +28,13 @@ public class GiaiPhuongTrinhBac2 {
     }
 
     public static double checkA() {
-        System.out.print("Nhập a:");
+        System.out.println("Nhập a:");
         double a = Double.parseDouble(scanner.nextLine());
         while (true) {
             if (a != 0) {
                 return a;
             } else {
-                System.out.print("hệ số a phải khác 0, nhập lại a :");
+                System.out.println("hệ số a phải khác 0, nhập lại a :");
                 a = Double.parseDouble(scanner.nextLine());
             }
         }

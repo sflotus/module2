@@ -18,7 +18,8 @@ public class Fan {
     public void setSpeed(int speed) {
         this.speed = speed;
     }
-    public  boolean getOn(){
+
+    public boolean isOn() {
         return on;
     }
 
@@ -41,7 +42,8 @@ public class Fan {
     public void setColor(String color) {
         this.color = color;
     }
-    Fan(){
+
+    public Fan(){
         this.speed = SLOW;
         this.on = false;
         this.radius= 5;
@@ -51,21 +53,5 @@ public class Fan {
         if(on){
             return "Fan is On. Speed: "+this.speed+", Color : " + this.color + ", Radius: " +this.radius;
         } else return "Fan is off. Color : " + this.color + ", Radius: " +this.radius;
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Fan fan1 = new Fan();
-        Fan fan2 = new Fan();
-        fan1.setSpeed(FAST);
-        fan1.setRadius(10);
-        fan1.setColor("yellow");
-        fan1.setOn(true);
-        System.out.println("Status Fan1 : " + fan1.toString());
-        fan2.setSpeed(MEDIUM);
-        fan2.setRadius(5);
-        fan2.setColor("blue");
-        fan2.setOn(false);
-        System.out.println("Status Fan2 : " + fan2.toString());
     }
 }

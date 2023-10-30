@@ -3,7 +3,7 @@ package Exercices.ss4_class_object.phuong_trinh_bac_2;
 public class QuadraticEquation {
     private double a, b, c;
 
-    QuadraticEquation(double a, double b, double c) {
+    public QuadraticEquation(double a, double b, double c) {
         this.a = a;
         this.b = b;
         this.c = c;
@@ -39,10 +39,10 @@ public class QuadraticEquation {
     }
 
     public double getRoot1() {
-        return ((-this.b) + Math.pow((getDiscriminant()), 0.5)) / (2 * a);
+        return ((-this.b) + Math.pow((this.getDiscriminant()), 0.5)) / (2 * a);
     }
 
     public double getRoot2() {
-        return ((-this.b) - Math.pow((getDiscriminant()), 0.5)) / (2 * a);
+        return ((-this.b) - Math.pow((this.getDiscriminant()), 0.5)) / (2 * a);
     }
 }
