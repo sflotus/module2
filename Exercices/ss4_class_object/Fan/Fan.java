@@ -1,4 +1,4 @@
-package Exercices.ss4_class_object.Fan;
+package Exercices.ss4_class_object.fan;
 
 import java.util.Scanner;
 

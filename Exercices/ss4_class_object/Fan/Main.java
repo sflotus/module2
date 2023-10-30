@@ -1,5 +1,5 @@
 package Exercices.ss4_class_object.fan;
-import Exercices.ss4_class_object.Fan.Fan;
+import Exercices.ss4_class_object.fan.Fan;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {

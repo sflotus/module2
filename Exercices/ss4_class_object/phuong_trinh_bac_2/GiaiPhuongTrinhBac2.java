@@ -7,7 +7,7 @@ public class GiaiPhuongTrinhBac2 {
 
     public static void main(String[] args) {
         System.out.println("Phương trình bậc 2 có dạng :  aX^2 + bX + c = 0 \n" +
-                "Mời bạn nhập hệ số a, b, c");
+                "Mời bạn nhập hệ số a, b, c. a khác 0");
         double a = checkA();
         System.out.println("Nhập b: ");
         double b = Double.parseDouble(scanner.nextLine());
