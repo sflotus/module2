@@ -28,7 +28,7 @@ public class Circles {
     }
 
     public String toString() {
-        return "Radis : " + this.radius +" Color: " + this.color;
+        return "Radius : " + this.radius +" Color: " + this.color;
     }
 
 
