@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class StopWatch {
     private long startTime, endTime;
 
-     StopWatch() {
+     public StopWatch() {
         this.startTime = System.currentTimeMillis();
     }
 
