@@ -1,4 +1,4 @@
-package Exercices.ss6_inheritance_oop.Point2d_Point3d;
+package Exercices.ss6_inheritance_oop.point2d_point3d;
 
 public class Point3D extends  Point2D{
     private  float z;
