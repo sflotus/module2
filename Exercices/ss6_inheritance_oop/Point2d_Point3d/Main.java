@@ -1,4 +1,4 @@
-package Exercices.ss6_inheritance_oop.fan2d_fan3d;
+package Exercices.ss6_inheritance_oop.Point2d_Point3d;
 
 import java.util.Scanner;
 

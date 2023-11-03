@@ -1,5 +1,7 @@
 package Exercices.ss4_class_object.fan;
 import Exercices.ss4_class_object.fan.Fan;
+import Exercices.ss4_class_object.stop_watch.StopWatch;
+
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
