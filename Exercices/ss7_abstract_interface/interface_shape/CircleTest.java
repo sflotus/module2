@@ -1,4 +1,4 @@
-package Exercices.ss7_abstract_interface.ex_interface;
+package Exercices.ss7_abstract_interface.interface_shape;
 
 
 import java.util.Random;

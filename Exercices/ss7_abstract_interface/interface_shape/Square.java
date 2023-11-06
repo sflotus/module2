@@ -1,4 +1,4 @@
-package Exercices.ss7_abstract_interface.ex_interface;
+package Exercices.ss7_abstract_interface.interface_shape;
 
 public class Square extends Shape{
     private double length =1.0;
