@@ -1,4 +1,4 @@
-package Exercices.ss7_abstract_interface.interface_shape;
+package Exercices.ss7_abstract_interface.interface_resizeable;
 
 public class Shape implements Resizeable{
     private String color = "green";

@@ -1,6 +1,6 @@
-package Exercices.ss7_abstract_interface.interface_shape;
+package Exercices.ss7_abstract_interface.interface_colorable;
 
-public class Circle extends Shape{
+public class Circle extends Shape {
     private double radius = 1.0;
 
     public Circle() {
@@ -39,8 +39,4 @@ public class Circle extends Shape{
                 + super.toString();
     }
 
-    @Override
-    public void resize(double percent) {
-        this.setRadius(this.getRadius()*(1+percent/100));
-    }
 }

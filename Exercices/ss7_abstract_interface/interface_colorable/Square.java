@@ -1,6 +1,6 @@
-package Exercices.ss7_abstract_interface.interface_shape;
+package Exercices.ss7_abstract_interface.interface_colorable;
 
-public class Square extends Shape{
+public class Square extends Shape {
     private double length =1.0;
 
     public Square() {
@@ -34,9 +34,5 @@ public class Square extends Shape{
                 + getLength()
                 + ", which is a subclass of "
                 + super.toString();
-    }
-    @Override
-    public void resize(double percent) {
-        this.setLength(this.getLength()*(1+percent/100));
     }
 }
