@@ -26,7 +26,7 @@ public class StopWatch {
         this.endTime = endTime;
     }
 
-    public void star() {
+    public void start() {
         this.startTime = System.currentTimeMillis();
     }
 

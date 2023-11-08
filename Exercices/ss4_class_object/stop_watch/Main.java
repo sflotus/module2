@@ -14,7 +14,7 @@ public class Main {
             arr[i] = random.nextInt(1000);
         }
         StopWatch watch = new StopWatch();
-        watch.star();
+        watch.start();
         sortArr(arr);
         watch.end();
         System.out.println("Thời gian thực thi: " + watch.getElapsedTime());
