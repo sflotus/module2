@@ -34,19 +34,13 @@ public class FruitOut extends Fruit{
     public void setExtraOut(double extraOut) {
         this.extraOut = extraOut;
     }
-    public void creatFruit() {
-        Scanner scanner = new Scanner(System.in);
-        super.creatFruit();
-        System.out.println("Extra out: ");
-        this.setExtraOut(Double.parseDouble(scanner.nextLine()));
-        System.out.println("Origin : ");
-        this.setOrgin(scanner.nextLine());
-    }
     @Override
     public String toString() {
         return super.toString()+"\n" +
                 "Origin: " + this.getOrgin()+"\n" +
-                "Extra out: "+this.getExtraOut();
+                "Extra out: "+this.getExtraOut()+"\n"+
+                "Price For Sale: " + priceForSale();
+
     }
     @Override
     public Double priceForSale() {

@@ -43,18 +43,9 @@ public abstract class Fruit implements IFruit {
     public String toString() {
         return "ID : " + this.getId() + "\n" +
                 "Name : " + this.getName() + "\n" +
-                "Price: " + this.getName();
+                "Price: " + this.getPrice();
     }
-    public void creatFruit(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Input : ");
-        System.out.println("Id: ");
-        this.setId(Integer.parseInt(scanner.nextLine()));
-        System.out.println("Name : ");
-        this.setName(scanner.nextLine());
-        System.out.println("Price: ");
-        this.setPrice(Double.parseDouble(scanner.nextLine()));
-    }
+
     @Override
     public abstract Double priceForSale();
 }

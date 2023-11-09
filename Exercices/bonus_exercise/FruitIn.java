@@ -24,19 +24,12 @@ public class FruitIn extends Fruit {
     public void setExtraIn(double extrain) {
         this.extraIn = extrain;
     }
-
-    @Override
-    public void creatFruit() {
-        Scanner scanner = new Scanner(System.in);
-        super.creatFruit();
-        System.out.println("Extra In: ");
-        this.setExtraIn(Double.parseDouble(scanner.nextLine()));
-    }
-
     @Override
     public String toString() {
         return super.toString() +"\n"+
-                "Extra In : " + getExtrain();
+                "Extra In : " + getExtrain()+"\n" +
+                "Price For Sale: " + priceForSale();
+
     }
 
     @Override
