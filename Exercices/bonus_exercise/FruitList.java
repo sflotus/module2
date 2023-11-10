@@ -5,32 +5,11 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class FruitList {
-    //    private FruitIn fruitIn;
-//    private FruitOut fruitOut;
-//    public FruitList(FruitIn fruitIn, FruitOut fruitOut) {
-//        this.fruitIn = fruitIn;
-//        this.fruitOut = fruitOut;
-//    }
-//
-//    public FruitIn getFruitIn() {
-//        return fruitIn;
-//    }
-//
-//    public void setFruitIn(FruitIn fruitIn) {
-//        this.fruitIn = fruitIn;
-//    }
-//
-//    public FruitOut getFruitOut() {
-//        return fruitOut;
-//    }
-//
-//    public void setFruitOut(FruitOut fruitOut) {
-//        this.fruitOut = fruitOut;
-//    }
+
     // Dùng thư viện có sẳn ArrayList để tạo 1 array không có số phần tử xác định
     private ArrayList<FruitIn> fruitIns = new ArrayList<FruitIn>();
     private ArrayList<FruitOut> fruitOuts = new ArrayList<FruitOut>();
-
+    Scanner scanner = new Scanner(System.in);
     public FruitList() {
     }
 
@@ -89,7 +68,6 @@ public class FruitList {
     }
 
     private void callMenuChoose1() {
-        Scanner scanner = new Scanner(System.in);
         int id;
         String name, orgin;
         double price;
@@ -139,7 +117,6 @@ public class FruitList {
     }
 
     private void callMenuChoose2() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Bạn đã chọn 2: In ra danh sách Fruit   ");
         boolean flag = true;
         do {
@@ -155,7 +132,6 @@ public class FruitList {
                     ) {
                         System.out.println(fruitIns.get(i));
                         System.out.println("---------------");
-
                     }
                     break;
                 case 2:
@@ -164,6 +140,7 @@ public class FruitList {
                     ) {
                         System.out.println(fruitOuts.get(i));
                         System.out.println("---------------");
+
                     }
                     break;
                 default:
@@ -176,7 +153,6 @@ public class FruitList {
     }
 
     private void callMenuChoose3() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Bạn đã chọn 3: In ra danh sách có giá lớn hơn X");
         System.out.println("Nhập X:");
         double inputPrice = Double.parseDouble(scanner.nextLine());
@@ -186,9 +162,7 @@ public class FruitList {
             if (fruitIns.get(i).getPrice() > inputPrice) {
                 System.out.println(fruitIns.get(i));
                 System.out.println("---------------");
-
             }
-
         }
         System.out.println("Các Fruit có giá lớn hơn " + inputPrice + " Trong Fruit Out là:");
         for (int i = 0; i < fruitOuts.size(); i++
@@ -196,14 +170,11 @@ public class FruitList {
             if (fruitOuts.get(i).getPrice() > inputPrice) {
                 System.out.println(fruitOuts.get(i));
                 System.out.println("---------------");
-
             }
-
         }
     }
 
     private void callMenuChoose4() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Bạn đã chọn 4: Tính tổng Fruit có trong danh sách   ");
         boolean flag = true;
         do {
