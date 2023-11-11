@@ -41,13 +41,13 @@ public class TypeProduct {
         this.description = description;
     }
     public  void input(){
-        System.out.println("Nhap ID:");
+        System.out.println("Nhap ID product:");
         int id = Integer.parseInt(scanner.nextLine());
         setId(id);
-        System.out.println("Nhap Name:");
+        System.out.println("Nhap Name product:");
         String name = scanner.nextLine();
         setName(name);
-        System.out.println("Nhap Description");
+        System.out.println("Nhap Description product");
         String description = scanner.nextLine();
         setDescription(description);
     }

@@ -3,7 +3,7 @@ package Exercices.bonus_extra_exercise;
 import java.util.ArrayList;
 
 public class TypeProductManager implements IManager<TypeProduct>, ISort {
-    ArrayList<TypeProduct> typeProducts = new ArrayList<>();
+    private ArrayList<TypeProduct> typeProducts = new ArrayList<>();
 
     public TypeProductManager() {
     }
@@ -98,10 +98,7 @@ public class TypeProductManager implements IManager<TypeProduct>, ISort {
                 }
             }
         }
-        for (TypeProduct typeProduct:typeProducts
-             ) {
-            System.out.println(typeProduct);
-        }
+        displayAll();
     }
 
     @Override
@@ -110,17 +107,14 @@ public class TypeProductManager implements IManager<TypeProduct>, ISort {
         for (int i = 0; i < typeProducts.size(); i++) {
             for (int j = i + 1; j < typeProducts.size(); j++) {
                 if (typeProducts.get(i).getId() < typeProducts.get(j).getId()) {
-                    TypeProduct temp ;
-                    temp = typeProducts.get(i);
+                    TypeProduct temp=typeProducts.get(i) ;
                     typeProducts.set(i, typeProducts.get(j));
                     typeProducts.set(j, temp);
                 }
             }
         }
-        for (TypeProduct typeProduct:typeProducts
-        ) {
-            System.out.println(typeProduct);
-        }
+        displayAll();
     }
     }
+
 }
