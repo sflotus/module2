@@ -123,7 +123,7 @@ public class ProductManager implements ISort, ISortPrice, IManager<Product> {
     public void sortByPrice() {
         for (int i = 0; i < products.size(); i++) {
             for (int j = i + 1; j < products.size(); j++) {
-                if (products.get(i).getPrice() > products.get(j).getPrice()) {
+                if (products.get(i).getPrice() >= products.get(j).getPrice()) {
                     Product temp;
                     temp = products.get(i);
                     products.set(i, products.get(j));
@@ -152,12 +152,13 @@ public class ProductManager implements ISort, ISortPrice, IManager<Product> {
     private int countType(int typeId) {
         int count = 0;
         for (Product product : products) {
-                if(product.getType().getId()==typeId){
-                    count++;
-                }
+            if (product.getType().getId() == typeId) {
+                count++;
+            }
         }
         return count;
     }
+
     public void sortByQuantityOfType() {
         for (int i = 0; i < products.size(); i++) {
             for (int j = i + 1; j < products.size(); j++) {
@@ -171,6 +172,39 @@ public class ProductManager implements ISort, ISortPrice, IManager<Product> {
         }
         displayAll();
 
+    }
+
+    public void viewProduct(String typeproduct) {
+        switch (typeproduct) {
+            case "In":
+                for (Product product : products) {
+                    if (product instanceof ProductIn) {
+                        System.out.println(product);
+                    }
+                }
+                break;
+            case "Out":
+                for (Product product : products) {
+                    if (product instanceof ProductOut) {
+                        System.out.println(product);
+                    }
+                }
+                break;
+        }
+    }
+    public void  viewProduct(long value){
+        for (Product product : products) {
+            if (product instanceof ProductIn) {
+                 if(((ProductIn)product).getPrice()>=value){
+                     System.out.println(product);
+                 };
+            }
+            if (product instanceof ProductOut) {
+                if(((ProductOut)product).getPrice()>=value){
+                    System.out.println(product);
+                };
+            }
+        }
     }
 }
 

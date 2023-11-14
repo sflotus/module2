@@ -1,10 +1,12 @@
 package Exercices.bonus_extra_exercise;
 
 import java.util.ArrayList;
+import java.util.Objects;
+import java.util.Scanner;
 
 public class TypeProductManager implements IManager<TypeProduct>, ISort {
     private ArrayList<TypeProduct> typeProducts = new ArrayList<>();
-
+    Scanner scanner = new Scanner(System.in);
     public TypeProductManager() {
     }
 
@@ -66,7 +68,7 @@ public class TypeProductManager implements IManager<TypeProduct>, ISort {
             }
         }
         if (!isExit) {
-            System.out.println("Khong tim thay san pham voi ID : " + name);
+            System.out.println("Khong tim thay san pham voi Name : " + name);
         }
         return list;
     }
@@ -91,7 +93,7 @@ public class TypeProductManager implements IManager<TypeProduct>, ISort {
         for (int i = 0; i < typeProducts.size(); i++) {
             for (int j = i + 1; j < typeProducts.size(); j++) {
                 if (typeProducts.get(i).getId() > typeProducts.get(j).getId()) {
-                    TypeProduct temp ;
+                    TypeProduct temp;
                     temp = typeProducts.get(i);
                     typeProducts.set(i, typeProducts.get(j));
                     typeProducts.set(j, temp);
@@ -103,11 +105,36 @@ public class TypeProductManager implements IManager<TypeProduct>, ISort {
 
     @Override
     public void sortById(boolean reverse) {
-    if(reverse){
+        if (reverse) {
+            for (int i = 0; i < typeProducts.size(); i++) {
+                for (int j = i + 1; j < typeProducts.size(); j++) {
+                    if (typeProducts.get(i).getId() < typeProducts.get(j).getId()) {
+                        TypeProduct temp = typeProducts.get(i);
+                        typeProducts.set(i, typeProducts.get(j));
+                        typeProducts.set(j, temp);
+                    }
+                }
+            }
+            displayAll();
+        }
+    }
+
+    private int countType(int typeId) {
+        int count = 0;
+        for (TypeProduct typeProduct : typeProducts) {
+            if (typeProduct.getId() == typeId) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public void sortByQuantityOfType() {
         for (int i = 0; i < typeProducts.size(); i++) {
             for (int j = i + 1; j < typeProducts.size(); j++) {
-                if (typeProducts.get(i).getId() < typeProducts.get(j).getId()) {
-                    TypeProduct temp=typeProducts.get(i) ;
+                if (this.countType(typeProducts.get(i).getId()) < this.countType(typeProducts.get(j).getId())) {
+                    TypeProduct temp;
+                    temp = typeProducts.get(i);
                     typeProducts.set(i, typeProducts.get(j));
                     typeProducts.set(j, temp);
                 }
@@ -115,6 +142,51 @@ public class TypeProductManager implements IManager<TypeProduct>, ISort {
         }
         displayAll();
     }
-    }
 
+    private String chooseTypeProductName() {
+        ArrayList<String> listNames = new ArrayList<>();
+        int value;
+        boolean flag;
+        System.out.println("Danh sách TypeProduct:");
+        for (TypeProduct typeProduct : typeProducts) {
+            // add name to listName
+            if (!listNames.equals(typeProduct.getName())) {
+                listNames.add(typeProduct.getName());
+            }
+        }
+        for (int i =0; i<listNames.size();i++){
+            System.out.println(i+": "+listNames.get(i));
+        }
+        do {
+            flag = false;
+            System.out.println("Mời bạn Chọn TypeProduct:");
+            value =Integer.parseInt(scanner.nextLine());
+            if(!(0<=value&&value<=listNames.size())){
+                System.out.println("Giá trị chọn không hợp lệ.");
+                flag=true;
+            }
+        }
+        while (flag);
+        return listNames.get(value);
+    }
+    public void displayByTypeProductName(){
+        String value =chooseTypeProductName();
+        System.out.println("Danh Sách:");
+        for (TypeProduct typeProduct:typeProducts){
+            if(typeProduct.getName()==value){
+                System.out.println(typeProduct);
+            }
+        }
+    }
+    public  void  removeByTypeProductName(){
+        System.out.println("Mời bạn chọn Type Product cần xóa");
+        String value =chooseTypeProductName();
+        for( int i =0; i< typeProducts.size();i++){
+            if(typeProducts.get(i).getName()== value){
+                typeProducts.remove(i);
+                i--;
+            }
+        }
+    }
 }
+

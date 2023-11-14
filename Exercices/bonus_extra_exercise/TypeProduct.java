@@ -54,9 +54,9 @@ public class TypeProduct {
     @Override
     public String toString() {
         return this.getName()+"{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
+                "id=" + this.getId() +
+                ", name='" + this.getName() + '\'' +
+                ", description='" + this.getDescription() + '\'' +
                 '}';
     }
 }
