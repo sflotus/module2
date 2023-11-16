@@ -1,36 +1,17 @@
-package Exercices.bonus_extra_exercise.repo;
+package Exercices.product_manager.repo;
 
-import Exercices.bonus_extra_exercise.IManager;
-import Exercices.bonus_extra_exercise.ISort;
-import Exercices.bonus_extra_exercise.model.TypeProduct;
+import Exercices.product_manager.model.TypeProduct;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TypeProductManager implements IManager<TypeProduct>, ISort {
+public class TypeProductManager implements IManager<TypeProduct>, ISort{
     private ArrayList<TypeProduct> typeProducts = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
-    public TypeProductManager() {
-    }
-
-    public TypeProductManager(ArrayList<TypeProduct> typeProducts) {
-        this.typeProducts = typeProducts;
-    }
-
-    public ArrayList<TypeProduct> getTypeProducts() {
-        return typeProducts;
-    }
-
-    public void setTypeProducts(ArrayList<TypeProduct> typeProducts) {
-        this.typeProducts = typeProducts;
-    }
-
     @Override
     public void add(TypeProduct typeProduct) {
         typeProducts.add(typeProduct);
     }
-
-    @Override
     public TypeProduct search(int id) {
         boolean isExit = false;
         for (int i = 0; i < typeProducts.size(); i++) {
@@ -46,7 +27,7 @@ public class TypeProductManager implements IManager<TypeProduct>, ISort {
         return null;
     }
 
-    @Override
+
     public void remove(int id) {
         boolean isExit = false;
         for (int i = 0; i < typeProducts.size(); i++) {
@@ -60,7 +41,7 @@ public class TypeProductManager implements IManager<TypeProduct>, ISort {
         } else System.out.println("Da xoa san pham co ID : " + id);
     }
 
-    @Override
+
     public ArrayList<TypeProduct> search(String name) {
         boolean isExit = false;
         ArrayList<TypeProduct> list = new ArrayList<>();
@@ -76,14 +57,14 @@ public class TypeProductManager implements IManager<TypeProduct>, ISort {
         return list;
     }
 
-    @Override
+
     public ArrayList<TypeProduct> getAll() {
         ArrayList<TypeProduct> list = new ArrayList<>();
         list.addAll(typeProducts);
         return list;
     }
 
-    @Override
+
     public void displayAll() {
         for (TypeProduct typeProduct : typeProducts
         ) {
@@ -91,7 +72,7 @@ public class TypeProductManager implements IManager<TypeProduct>, ISort {
         }
     }
 
-    @Override
+
     public void sortById() {
         for (int i = 0; i < typeProducts.size(); i++) {
             for (int j = i + 1; j < typeProducts.size(); j++) {
@@ -106,7 +87,7 @@ public class TypeProductManager implements IManager<TypeProduct>, ISort {
         displayAll();
     }
 
-    @Override
+
     public void sortById(boolean reverse) {
         if (reverse) {
             for (int i = 0; i < typeProducts.size(); i++) {

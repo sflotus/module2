@@ -1,10 +1,10 @@
-package Exercices.bonus_extra_exercise.view;
+package Exercices.product_manager.controller;
 
-import Exercices.bonus_extra_exercise.model.ProductIn;
-import Exercices.bonus_extra_exercise.model.ProductOut;
-import Exercices.bonus_extra_exercise.model.TypeProduct;
-import Exercices.bonus_extra_exercise.repo.ProductManager;
-import Exercices.bonus_extra_exercise.repo.TypeProductManager;
+import Exercices.product_manager.model.ProductIn;
+import Exercices.product_manager.model.ProductOut;
+import Exercices.product_manager.model.TypeProduct;
+import Exercices.product_manager.repo.ProductManager;
+import Exercices.product_manager.repo.TypeProductManager;
 
 import java.util.Scanner;
 

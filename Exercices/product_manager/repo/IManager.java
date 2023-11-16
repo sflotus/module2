@@ -1,4 +1,4 @@
-package Exercices.bonus_extra_exercise;
+package Exercices.product_manager.repo;
 
 import java.util.ArrayList;
 

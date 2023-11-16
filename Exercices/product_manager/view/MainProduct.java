@@ -1,6 +1,6 @@
-package Exercices.bonus_extra_exercise.view;
+package Exercices.product_manager.view;
 
-import Exercices.bonus_extra_exercise.view.Menu;
+import Exercices.product_manager.controller.Menu;
 
 public class MainProduct {
     public static void main(String[] args) {

@@ -1,13 +1,13 @@
-package Exercices.bonus_extra_exercise.repo;
+package Exercices.product_manager.repo;
 
-import Exercices.bonus_extra_exercise.*;
-import Exercices.bonus_extra_exercise.model.Product;
-import Exercices.bonus_extra_exercise.model.ProductIn;
-import Exercices.bonus_extra_exercise.model.ProductOut;
+
+import Exercices.product_manager.model.Product;
+import Exercices.product_manager.model.ProductIn;
+import Exercices.product_manager.model.ProductOut;
 
 import java.util.ArrayList;
 
-public class ProductManager implements ISort, ISortPrice, IManager<Product> {
+public class ProductManager implements IManager<Product>,ISort,ISortPrice{
     private ArrayList<Product> products = new ArrayList<>();
 
     public ProductManager() {
@@ -25,13 +25,10 @@ public class ProductManager implements ISort, ISortPrice, IManager<Product> {
         this.products = products;
     }
 
-
-    @Override
     public void add(Product product) {
         products.add(product);
     }
 
-    @Override
     public Product search(int id) {
         boolean isExit = false;
         for (int i = 0; i < products.size(); i++) {
@@ -47,7 +44,7 @@ public class ProductManager implements ISort, ISortPrice, IManager<Product> {
         return null;
     }
 
-    @Override
+
     public void remove(int id) {
         boolean isExit = false;
         for (int i = 0; i < products.size(); i++) {
@@ -61,7 +58,7 @@ public class ProductManager implements ISort, ISortPrice, IManager<Product> {
         }
     }
 
-    @Override
+
     public ArrayList<Product> search(String name) {
         boolean isExit = false;
         ArrayList<Product> list = new ArrayList<>();
@@ -77,14 +74,14 @@ public class ProductManager implements ISort, ISortPrice, IManager<Product> {
         return list;
     }
 
-    @Override
+
     public ArrayList<Product> getAll() {
         ArrayList<Product> list = new ArrayList<>();
         list.addAll(products);
         return list;
     }
 
-    @Override
+
     public void displayAll() {
         for (Product product : products
         ) {
@@ -92,7 +89,7 @@ public class ProductManager implements ISort, ISortPrice, IManager<Product> {
         }
     }
 
-    @Override
+
     public void sortById() {
         for (int i = 0; i < products.size(); i++) {
             for (int j = i + 1; j < products.size(); j++) {
@@ -107,7 +104,7 @@ public class ProductManager implements ISort, ISortPrice, IManager<Product> {
         displayAll();
     }
 
-    @Override
+
     public void sortById(boolean reverse) {
         if (reverse) {
             for (int i = 0; i < products.size(); i++) {
@@ -124,7 +121,7 @@ public class ProductManager implements ISort, ISortPrice, IManager<Product> {
         }
     }
 
-    @Override
+
     public void sortByPrice() {
         for (int i = 0; i < products.size(); i++) {
             for (int j = i + 1; j < products.size(); j++) {
@@ -139,7 +136,7 @@ public class ProductManager implements ISort, ISortPrice, IManager<Product> {
         displayAll();
     }
 
-    @Override
+
     public void sortByPrice(boolean reverse) {
         for (int i = 0; i < products.size(); i++) {
             for (int j = i + 1; j < products.size(); j++) {
@@ -197,17 +194,20 @@ public class ProductManager implements ISort, ISortPrice, IManager<Product> {
                 break;
         }
     }
-    public void  viewProduct(long value){
+
+    public void viewProduct(long value) {
         for (Product product : products) {
             if (product instanceof ProductIn) {
-                 if(((ProductIn)product).getPrice()>=value){
-                     System.out.println(product);
-                 };
+                if (((ProductIn) product).getPrice() >= value) {
+                    System.out.println(product);
+                }
+                ;
             }
             if (product instanceof ProductOut) {
-                if(((ProductOut)product).getPrice()>=value){
+                if (((ProductOut) product).getPrice() >= value) {
                     System.out.println(product);
-                };
+                }
+                ;
             }
         }
     }
