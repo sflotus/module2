@@ -1,6 +1,11 @@
-package Exercices.bonus_extra_exercise;
+package Exercices.bonus_extra_exercise.view;
 
-import java.util.ArrayList;
+import Exercices.bonus_extra_exercise.model.ProductIn;
+import Exercices.bonus_extra_exercise.model.ProductOut;
+import Exercices.bonus_extra_exercise.model.TypeProduct;
+import Exercices.bonus_extra_exercise.repo.ProductManager;
+import Exercices.bonus_extra_exercise.repo.TypeProductManager;
+
 import java.util.Scanner;
 
 public class Menu {

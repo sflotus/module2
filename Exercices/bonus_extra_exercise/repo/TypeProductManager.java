@@ -1,7 +1,10 @@
-package Exercices.bonus_extra_exercise;
+package Exercices.bonus_extra_exercise.repo;
+
+import Exercices.bonus_extra_exercise.IManager;
+import Exercices.bonus_extra_exercise.ISort;
+import Exercices.bonus_extra_exercise.model.TypeProduct;
 
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class TypeProductManager implements IManager<TypeProduct>, ISort {
@@ -54,7 +57,7 @@ public class TypeProductManager implements IManager<TypeProduct>, ISort {
         }
         if (!isExit) {
             System.out.println("Khong tim thay san pham voi ID : " + id);
-        }
+        } else System.out.println("Da xoa san pham co ID : " + id);
     }
 
     @Override

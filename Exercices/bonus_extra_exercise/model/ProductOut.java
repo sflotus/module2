@@ -1,6 +1,9 @@
-package Exercices.bonus_extra_exercise;
+package Exercices.bonus_extra_exercise.model;
 
-public class ProductOut extends Product{
+import java.util.Scanner;
+
+public class ProductOut extends Product {
+    Scanner scanner = new Scanner(System.in);
     private long extraOut;
 
     public ProductOut() {

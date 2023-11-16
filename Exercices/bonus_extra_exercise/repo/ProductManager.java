@@ -1,4 +1,9 @@
-package Exercices.bonus_extra_exercise;
+package Exercices.bonus_extra_exercise.repo;
+
+import Exercices.bonus_extra_exercise.*;
+import Exercices.bonus_extra_exercise.model.Product;
+import Exercices.bonus_extra_exercise.model.ProductIn;
+import Exercices.bonus_extra_exercise.model.ProductOut;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package Exercices.bonus_extra_exercise;
+package Exercices.bonus_extra_exercise.model;
 
 import java.util.Scanner;
 
