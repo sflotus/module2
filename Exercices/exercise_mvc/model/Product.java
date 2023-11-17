@@ -30,7 +30,7 @@ public class Product {
 	}
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + "]";
+		return getName()+" [id=" + id + ", description=" + description + ", price=" + price + "]";
 	}
 	public Product(int id, String name, String description, double price) {
 		super();

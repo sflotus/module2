@@ -3,7 +3,11 @@ package Exercices.exercise_mvc.repo;
 
 import Exercices.exercise_mvc.model.Product;
 
+import java.util.ArrayList;
+
 public interface IProductRepo {
-	Product[] getAll();
+	ArrayList<Product> getAll();
 	void add(Product p);
+	void remove(int id);
+	void edit(int id,String name, String description, double price);
 }
