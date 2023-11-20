@@ -1,8 +1,8 @@
 package Exercices.ss10_arraylist;
 
 public class MyList<E> {
-    protected int size = 0;
     static final int DEFAULT_CAPACITY = 10;
+    protected int size = 0;
     protected Object[] element;
 
     MyList() {
