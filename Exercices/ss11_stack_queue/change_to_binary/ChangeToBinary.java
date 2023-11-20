@@ -1,25 +1,22 @@
-package Exercices.ss11_stack_queue.ten_to_two;
+package Exercices.ss11_stack_queue.change_to_binary;
 
-import java.util.Arrays;
 import java.util.Stack;
 
-public class ChangeTenToTwo {
+public class ChangeToBinary {
     private int number;
 
-    public ChangeTenToTwo(int number) {
+    public ChangeToBinary(int number) {
         this.number = number;
     }
-    public int change(){
+    public void change(){
         int tempNumber = number;
-        String value;
         Stack<Integer> binary =new Stack<>();
         while (tempNumber>0){
             binary.push(tempNumber%2);
             tempNumber/=2;
         }
         while (!binary.isEmpty()){
-
+            System.out.print(binary.pop());
         }
-        return value;
     }
 }
