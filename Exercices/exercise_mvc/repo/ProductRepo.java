@@ -22,17 +22,7 @@ public class ProductRepo implements IProductRepo {
         products.get(i).setDescription(description);
         products.get(i).setPrice(price);
     }
-    public void remove(int id){
-        products.remove(id);
-    }
-    private int getIndex(int id){
-        int index=0;
-        for(int i = 0;i<products.size();i++){
-            if(products.get(i).getId()==id){
-                index =i;
-            }
-
-        }
-        return index;
+    public void remove(int i){
+        products.remove(i);
     }
 }
