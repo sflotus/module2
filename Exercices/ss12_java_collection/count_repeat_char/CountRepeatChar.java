@@ -17,9 +17,9 @@ public class CountRepeatChar {
     public void countChar(){
         Map<Character , Integer> map = new HashMap<>();
         for(int i =0;i<string.length();i++){
-//            if(map.containsKey(string.charAt(i))){
-//                map.put(string.charAt(i),map.get(string.charAt(i)+1));
-//            }else map.put(string.charAt(i),1);
+            if(map.containsKey(string.charAt(i))){
+                map.put(string.charAt(i),map.get(string.charAt(i)+1));
+            }else map.put(string.charAt(i),1);
         }
         Set<Character> set = map.keySet();
         for (Character c: set) {
