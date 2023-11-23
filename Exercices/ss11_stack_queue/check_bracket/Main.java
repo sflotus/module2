@@ -7,8 +7,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input your String : ");
         String string = scanner.nextLine();
-        CheckBracket checkBracket=new CheckBracket(string);
-        if(checkBracket.checkBracket()){
+        CheckBracket checkBracket=new CheckBracket();
+        if(checkBracket.checkBracket(string)){
             System.out.println("It's OK");
         } else System.out.println("Some thing is wrong");
     }

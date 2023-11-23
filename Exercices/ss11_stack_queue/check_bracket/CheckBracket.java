@@ -3,12 +3,8 @@ package Exercices.ss11_stack_queue.check_bracket;
 import java.util.Stack;
 
 public class CheckBracket {
-    private String string;
 
-    public CheckBracket(String string) {
-        this.string = string;
-    }
-    public Boolean checkBracket(){
+    public Boolean checkBracket(String string){
         Stack<Character> characterStack = new Stack<>();
         for(int i =0;i<string.length();i++){
             if((string.charAt(i)=='[')||(string.charAt(i)=='(')||(string.charAt(i)=='{')){

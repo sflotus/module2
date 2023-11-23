@@ -8,7 +8,7 @@ public class MainTest {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhap chuoi cua ban can kiem tra");
         String string = scanner.nextLine();
-        CountRepeatChar countRepeatChar = new CountRepeatChar(string);
-        countRepeatChar.countChar();
+        CountRepeatChar countRepeatChar = new CountRepeatChar();
+        countRepeatChar.countChar(string);
     }
 }

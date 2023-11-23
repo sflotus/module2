@@ -7,8 +7,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input your String");
         String string = scanner.nextLine();
-        CheckPalindromeUsingQueue checkPalindromeUsingQueue= new CheckPalindromeUsingQueue(string);
-        if(checkPalindromeUsingQueue.isPalindrome()){
+        CheckPalindromeUsingQueue checkPalindromeUsingQueue= new CheckPalindromeUsingQueue();
+        if(checkPalindromeUsingQueue.isPalindrome(string)){
             System.out.println("Your String is : " + string + " is a Palindrome");
         }
         else System.out.println("Your String is : " + string + " is not a Palindrome");;

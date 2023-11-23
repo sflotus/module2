@@ -6,15 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class CountRepeatChar {
-    private String string;
-
-    public CountRepeatChar() {
-    }
-
-    public CountRepeatChar(String string) {
-        this.string = string;
-    }
-    public void countChar(){
+    public void countChar(String string){
         Map<Character , Integer> map = new HashMap<>();
         for(int i =0;i<string.length();i++){
             if(map.containsKey(string.charAt(i))){
@@ -25,7 +17,7 @@ public class CountRepeatChar {
         }
         Set<Character> set = map.keySet();
         for (Character c: set) {
-            System.out.println("ky tu:" +c +" so lam lap : " +map.get(c));
+            System.out.println("ky tu: " +c +" so lam lap : " +map.get(c));
         }
     }
 }

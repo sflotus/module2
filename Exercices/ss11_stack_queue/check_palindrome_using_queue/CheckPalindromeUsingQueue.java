@@ -4,12 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class CheckPalindromeUsingQueue {
-    private String string;
-
-    public CheckPalindromeUsingQueue(String string) {
-        this.string = string;
-    }
-    public Boolean isPalindrome(){
+    public Boolean isPalindrome(String string){
         Queue<Character> stringQueue = new ArrayDeque<>();
         //upperCase String
         String upperString = string.toUpperCase();

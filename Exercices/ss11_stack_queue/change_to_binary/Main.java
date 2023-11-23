@@ -7,8 +7,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("input Number");
         int number = Integer.parseInt(scanner.nextLine());
-        ChangeToBinary changeToBinary = new ChangeToBinary(number);
+        ChangeToBinary changeToBinary = new ChangeToBinary();
         System.out.println("Change to Binary");
-        changeToBinary.change();
+        changeToBinary.change(number);
     }
 }
