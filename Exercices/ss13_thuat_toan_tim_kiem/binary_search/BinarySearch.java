@@ -31,12 +31,12 @@ public class BinarySearch {
             int mid = (left + right) / 2;
             if (array.get(mid) == value) {
                 return mid;
-            }else if (array.get(mid) < value) {
+            } else if (array.get(mid) < value) {
                 left = mid + 1;
             } else {
                 right = mid - 1;
             }
-            return binarySearch(array,left,right,value);
-        }else return -1;
+            return binarySearch(array, left, right, value);
+        } else return -1;
     }
 }

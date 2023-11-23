@@ -15,7 +15,7 @@ public class LongestIncreasingString {
             List<Character> list = new ArrayList<>();
             list.add(string.charAt(i));
             for (int j = i + 1; j < string.length(); j++) {
-                if (string.charAt(j) > list.get(list.size()-1)) {
+                if (string.charAt(j) > list.get(list.size() - 1)) {
                     list.add(string.charAt(j));
                 } else break;
             }
@@ -25,7 +25,7 @@ public class LongestIncreasingString {
             }
             list.clear();
         }
-        for (Character ch: maxSubString) {
+        for (Character ch : maxSubString) {
             System.out.print(ch);
         }
         System.out.println();
