@@ -32,8 +32,4 @@ public class ProductRepo implements IProductRepo {
     public void remove(int i){
         products.remove(i);
     }
-    public void sort(boolean reveres){
-
-    }
-
 }
