@@ -81,13 +81,11 @@ public class ProductService implements IProductService {
         List<Product> temp =new ArrayList<>();
         temp =productRepo.cloneProduct();
         if(reverse){
-            Collections.sort(temp,new SortProductByPriceASC());
-        } else Collections.sort(temp,new SortProductByPriceDEC());
+            temp.sort(new SortProductByPriceASC());
+        } else temp.sort(new SortProductByPriceDEC());
         for (Product product : temp) {
             System.out.println(product);
         }
-
-
     }
 
     public Product inputDataProduct() {
