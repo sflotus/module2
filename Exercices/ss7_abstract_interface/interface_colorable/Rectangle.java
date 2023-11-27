@@ -1,6 +1,6 @@
 package Exercices.ss7_abstract_interface.interface_colorable;
 
-public class Rectangle extends Shape {
+public class Rectangle extends Shape  implements Colorable {
     private double width = 1.0;
     private double length = 1.0;
 
@@ -51,5 +51,13 @@ public class Rectangle extends Shape {
                 + ", which is a subclass of "
                 + super.toString();
     }
-
+    @Override
+    public void howToColor() {
+        System.out.println("Color all four sides");
+    }
+    public void printColor(){
+        if(isFilled()){
+            howToColor();
+        } ;
+    }
 }

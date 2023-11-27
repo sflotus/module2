@@ -1,6 +1,6 @@
 package Exercices.ss7_abstract_interface.interface_colorable;
 
-public class Square extends Shape {
+public class Square extends Shape  implements Colorable{
     private double length =1.0;
 
     public Square() {
@@ -34,5 +34,14 @@ public class Square extends Shape {
                 + getLength()
                 + ", which is a subclass of "
                 + super.toString();
+    }
+    @Override
+    public void howToColor() {
+        System.out.println("Color all four sides");
+    }
+    public void printColor(){
+        if(isFilled()){
+            howToColor();
+        } ;
     }
 }

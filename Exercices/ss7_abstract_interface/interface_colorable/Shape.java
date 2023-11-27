@@ -1,6 +1,6 @@
 package Exercices.ss7_abstract_interface.interface_colorable;
 
-public class Shape implements Colorable {
+public class Shape {
     private String color = "green";
     private boolean filled = true;
 
@@ -37,13 +37,5 @@ public class Shape implements Colorable {
     }
 
 
-    @Override
-    public void howToColor() {
-        System.out.println("Color all four sides");
-    }
-    public void printColor(){
-        if(isFilled()){
-            howToColor();
-        } ;
-    }
+
 }

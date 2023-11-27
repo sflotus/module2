@@ -86,8 +86,6 @@ public class ProductService implements IProductService {
         for (Product product : temp) {
             System.out.println(product);
         }
-
-
     }
 
     public Product inputDataProduct() {

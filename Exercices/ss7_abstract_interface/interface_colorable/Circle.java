@@ -1,6 +1,6 @@
 package Exercices.ss7_abstract_interface.interface_colorable;
 
-public class Circle extends Shape {
+public class Circle extends Shape  implements Colorable{
     private double radius = 1.0;
 
     public Circle() {
@@ -38,5 +38,13 @@ public class Circle extends Shape {
                 + ", which is a subclass of "
                 + super.toString();
     }
-
+    @Override
+    public void howToColor() {
+        System.out.println("Color all four sides");
+    }
+    public void printColor(){
+        if(isFilled()){
+            howToColor();
+        } ;
+    }
 }
