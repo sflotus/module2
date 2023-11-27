@@ -17,7 +17,7 @@ public class LongestString {
 //            for (int j = i + 1; j < string.length(); j++) {
 //                if (string.charAt(j) > list.get(list.size() - 1)) {
 //                    list.add(string.charAt(j));
-//                } else break;
+//                }
 //            }
 //            if (list.size() > maxSubString.size()) {
 //                maxSubString.clear();
