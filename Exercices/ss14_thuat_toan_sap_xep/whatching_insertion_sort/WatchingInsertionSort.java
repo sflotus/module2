@@ -27,18 +27,12 @@ public class WatchingInsertionSort {
             int value = arr[i];
             int pos = i;
             while (pos > 0 && value < arr[pos - 1]) {
+                System.out.println("Hoan doi vi tri");
                 arr[pos] = arr[pos - 1];
                 pos--;
             }
             arr[pos]=value;
-            System.out.println("Bước " + i + ":");
-            toStringArr(arr);
+            System.out.println("Bước " + i + ": " + Arrays.toString(arr));
         }
-    }
-    private static void toStringArr(int[] arr){
-       for (int value : arr) {
-            System.out.print(value + " ");
-        }
-        System.out.println();
     }
 }

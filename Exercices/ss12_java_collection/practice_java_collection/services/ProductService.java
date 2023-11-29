@@ -80,7 +80,7 @@ public class ProductService implements IProductService {
     public void sort(boolean reverse) {
         List<Product> temp =new ArrayList<>();
         temp =productRepo.cloneProduct();
-        if(reverse){
+        if(!reverse){
             temp.sort(new SortProductByPriceASC());
         } else temp.sort(new SortProductByPriceDEC());
         for (Product product : temp) {

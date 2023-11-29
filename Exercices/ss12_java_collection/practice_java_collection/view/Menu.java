@@ -92,10 +92,10 @@ public class Menu {
         int value = Integer.parseInt(scanner.nextLine());
         switch (value){
             case 1:
-                productController.sort(true);
+                productController.sort(false);
                 break;
             case 2:
-                productController.sort(false);
+                productController.sort(true);
                 break;
         }
     }
