@@ -1,4 +1,4 @@
 package Exercices.case_study.repo;
 
-public interface IRepository {
+public interface IRepository<T> {
 }

@@ -29,4 +29,10 @@ public class House extends Facility{
         this.quantityFloor = quantityFloor;
     }
 
+    @Override
+    public String toString() {
+        return super.toString()+
+                " roomStandard= " + roomStandard +
+                ", quantityFloor=" + quantityFloor;
+    }
 }
