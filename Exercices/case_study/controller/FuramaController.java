@@ -5,6 +5,11 @@ import java.util.Scanner;
 
 public class FuramaController {
     static Scanner scanner = new Scanner(System.in);
+    static final int EMPLOYEE =1;
+    static final int CUSTOMER =2;
+    static final int FACILITY =3;
+    static final int BOOKING =4;
+    static final int PROMOTION =5;
 
     public void displayMainMenu() {
         int valueChoose;
@@ -14,26 +19,26 @@ public class FuramaController {
                 System.out.println("---------------MENU--------------");
                 System.out.println("-1. Employee Management         -");
                 System.out.println("-2. Customer Management         -");
-                System.out.println("-3.Facility Management          -");
-                System.out.println("-4.Booking Management           -");
-                System.out.println("-5.Promotion Management         -");
+                System.out.println("-3. Facility Management         -");
+                System.out.println("-4. Booking Management          -");
+                System.out.println("-5. Promotion Management        -");
                 System.out.println("-Other. Exit                    -");
                 System.out.println("---------------------------------");
                 valueChoose = Integer.parseInt(scanner.nextLine());
                 switch (valueChoose) {
-                    case 1:
+                    case EMPLOYEE:
                         displayEmployeeManagement();
                         break;
-                    case 2:
+                    case CUSTOMER:
                         displayCustomerManagement();
                         break;
-                    case 3:
+                    case FACILITY:
                         displayFacilityManagement();
                         break;
-                    case 4:
+                    case BOOKING:
                         displayBookingManagement();
                         break;
-                    case 5:
+                    case PROMOTION:
                         displayPromotionManagement();
                         break;
                     default:
@@ -57,7 +62,7 @@ public class FuramaController {
                 System.out.println("---------------Employee Management--------------");
                 System.out.println("-1. Display list employees                     -");
                 System.out.println("-2. Add new employee                           -");
-                System.out.println("-3.Edit employee                               -");
+                System.out.println("-3. Edit employee                               -");
                 System.out.println("-Other.Return main menu                        -");
                 value = Integer.parseInt(scanner.nextLine());
                 switch (value) {
