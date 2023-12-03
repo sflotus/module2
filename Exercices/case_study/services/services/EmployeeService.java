@@ -47,6 +47,7 @@ public class EmployeeService implements IEmployeeService {
     public void editByID() {
         System.out.println("Input Id to edit employee");
         String id = scanner.nextLine();
+        // nếu ở đây tạo 1 Arraylist rồi tham chiếu  về repo thì có khác nhau không ?
         if (employeeRepository.searchByID(id) == -1) {
             System.out.println("Sorry, employee has id: " + id + " is not exist");
         } else {
