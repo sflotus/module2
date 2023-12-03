@@ -7,5 +7,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FacilityRepository implements IFacilityRepository<Facility> {
-    private List<Facility> facilityList = new ArrayList<>();
+    private ArrayList<Facility> facilityList = new ArrayList<>();
+
+
+    @Override
+    public ArrayList<Facility> getAll() {
+        return facilityList;
+    }
+
+    @Override
+    public void add(Facility facility) {
+        facilityList.add(facility);
+    }
+
+    @Override
+    public void remove(int index) {
+        facilityList.remove(index);
+    }
+
+    @Override
+    public void diplayAll() {
+        for(Facility f:facilityList){
+            System.out.println(f);
+        }
+    }
 }

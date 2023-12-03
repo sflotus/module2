@@ -6,14 +6,18 @@ import java.util.ArrayList;
 
 
 public interface IProductService {
-//	ArrayList<Product> getAll();
-	void add(Product p);
+    ArrayList<Product> getAll();
 
-	void edit(int id);
-	void remove(int id);
+    void add(Product p);
 
-	Product inputDataProduct();
-	void search(String name);
-	void sort(boolean reverse);
+    void edit(int id);
+
+    void remove(int id);
+
+    Product inputDataProduct();
+
+    void search(String name);
+
+    void sort(boolean reverse);
 
 }

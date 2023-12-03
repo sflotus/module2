@@ -7,5 +7,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookingRepository implements IBookingRepository<Booking> {
-    private List<Booking> bookingList = new ArrayList<>();
+    private ArrayList<Booking> bookingList = new ArrayList<>();
+
+
+    @Override
+    public ArrayList<Booking> getAll() {
+        return bookingList;
+    }
+
+    @Override
+    public void add(Booking booking) {
+        bookingList.add(booking);
+    }
+
+    @Override
+    public void remove(int index) {
+        bookingList.remove(index);
+    }
+
+    @Override
+    public void diplayAll() {
+        for (Booking b:bookingList
+             ) {
+            System.out.println(b);
+        }
+    }
+
 }

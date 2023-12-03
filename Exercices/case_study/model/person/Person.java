@@ -5,12 +5,12 @@ import java.util.Date;
 public  abstract class Person {
     private  int CMND,phoneNumber;
     private  String name,sex,email, id;
-    private Date dateOfBirth;
+    private String dateOfBirth;
 
     public Person() {
     }
 
-    public Person(int CMND, int phoneNumber, String name, String sex, String email, String id, Date dateOfBirth) {
+    public Person(int CMND, int phoneNumber, String name, String sex, String email, String id, String dateOfBirth) {
         this.CMND = CMND;
         this.phoneNumber = phoneNumber;
         this.name = name;
@@ -68,11 +68,11 @@ public  abstract class Person {
         this.id = id;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

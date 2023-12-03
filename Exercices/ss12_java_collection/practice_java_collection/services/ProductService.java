@@ -5,17 +5,16 @@ import Exercices.ss12_java_collection.practice_java_collection.repo.IProductRepo
 import Exercices.ss12_java_collection.practice_java_collection.repo.ProductRepo;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class ProductService implements IProductService {
     Scanner scanner = new Scanner(System.in);
     private IProductRepo productRepo = new ProductRepo();
-//    @Override
-//    public ArrayList<Product> getAll() {
-//        return productRepo.getAll();
-//    }
+    @Override
+    public ArrayList<Product> getAll() {
+        return productRepo.getAll();
+    }
 
     @Override
     public void add(Product product) {

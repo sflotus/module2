@@ -1,7 +1,7 @@
 package Exercices.case_study.model.facility;
 
 public abstract class Facility {
-    private  int id;
+    private  String id;
     private String name;
     private  double usingArea;
     private double price;
@@ -11,7 +11,7 @@ public abstract class Facility {
     public Facility() {
     }
 
-    public Facility(int id, String name, double usingArea, double price, int maxNumPeople, String rentalType) {
+    public Facility(String id, String name, double usingArea, double price, int maxNumPeople, String rentalType) {
         this.id = id;
         this.name = name;
         this.usingArea = usingArea;
@@ -20,11 +20,11 @@ public abstract class Facility {
         this.rentalType = rentalType;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

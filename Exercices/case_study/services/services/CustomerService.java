@@ -6,4 +6,15 @@ import Exercices.case_study.services.interface_services.ICustomerService;
 
 public class CustomerService implements ICustomerService {
     private ICustomerRepository customerRepository = new CustomerRepository();
+
+    @Override
+    public void diplayAll() {
+
+    }
+
+    @Override
+    public void add() {
+
+    }
+
 }

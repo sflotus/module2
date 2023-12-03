@@ -6,4 +6,14 @@ import Exercices.case_study.services.interface_services.IFacilityService;
 
 public class FacilityService implements IFacilityService {
     private IFacilityRepository facilityRepository = new FacilityRepository();
+
+    @Override
+    public void diplayAll() {
+
+    }
+
+    @Override
+    public void add() {
+
+    }
 }

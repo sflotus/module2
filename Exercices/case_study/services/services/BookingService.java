@@ -7,4 +7,14 @@ import Exercices.case_study.services.interface_services.IBookingService;
 
 public class BookingService implements IBookingService {
   private IBookingRepository bookingServices = new BookingRepository();
+
+  @Override
+  public void diplayAll() {
+
+  }
+
+  @Override
+  public void add() {
+
+  }
 }

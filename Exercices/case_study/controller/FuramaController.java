@@ -1,9 +1,16 @@
 package Exercices.case_study.controller;
 
+import Exercices.case_study.services.services.*;
+
 import java.awt.*;
 import java.util.Scanner;
 
 public class FuramaController {
+    static  private BookingService bookingService = new BookingService();
+    static private ContractService contractService = new ContractService();
+    static  private CustomerService customerService = new CustomerService();
+    static  private EmployeeService employeeService = new EmployeeService();
+    static private FacilityService facilityService = new FacilityService();
     static Scanner scanner = new Scanner(System.in);
     static final int EMPLOYEE =1;
     static final int CUSTOMER =2;
@@ -67,10 +74,16 @@ public class FuramaController {
                 value = Integer.parseInt(scanner.nextLine());
                 switch (value) {
                     case 1:
+                        System.out.println("--------- Display list employees-------");
+                        employeeService.diplayAll();
                         break;
                     case 2:
+                        System.out.println("--------- Add new employee-------");
+                        employeeService.add();
                         break;
                     case 3:
+                        System.out.println("--------- Edit employee-------");
+                        employeeService.editByID();
                         break;
                     default:
                         flag = false;
