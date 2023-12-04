@@ -3,14 +3,14 @@ package Exercices.case_study.model.person;
 import java.util.Date;
 
 public  abstract class Person {
-    private  int CMND,phoneNumber;
+
     private  String name,sex,email, id;
-    private String dateOfBirth;
+    private String dateOfBirth,phoneNumber,CMND;
 
     public Person() {
     }
 
-    public Person(int CMND, int phoneNumber, String name, String sex, String email, String id, String dateOfBirth) {
+    public Person(String CMND, String phoneNumber, String name, String sex, String email, String id, String dateOfBirth) {
         this.CMND = CMND;
         this.phoneNumber = phoneNumber;
         this.name = name;
@@ -20,19 +20,19 @@ public  abstract class Person {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public int getCMND() {
+    public String getCMND() {
         return CMND;
     }
 
-    public void setCMND(int CMND) {
+    public void setCMND(String CMND) {
         this.CMND = CMND;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

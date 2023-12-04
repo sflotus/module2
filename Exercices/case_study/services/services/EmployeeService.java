@@ -3,6 +3,7 @@ package Exercices.case_study.services.services;
 import Exercices.case_study.model.person.Employee;
 import Exercices.case_study.repo.interface_repo.IEmployeeRepository;
 import Exercices.case_study.repo.repo.EmployeeRepository;
+import Exercices.case_study.services.FuramaExeption;
 import Exercices.case_study.services.interface_services.IEmployeeService;
 
 import java.awt.*;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class EmployeeService implements IEmployeeService {
     Scanner scanner = new Scanner(System.in);
@@ -20,18 +22,56 @@ public class EmployeeService implements IEmployeeService {
     }
 
     public void add() {
+        boolean flag;
         System.out.println(" Input CMND ");
-        int cmnd = Integer.parseInt(scanner.nextLine());
+        String cmnd = null;
+        do {
+            flag = false;
+            try {
+                cmnd = checkCmnd();
+            } catch (FuramaExeption e) {
+                System.out.println(e.getMessage());
+                flag = true;
+            }
+        } while (flag);
         System.out.println("Input phone number");
-        int phoneNumber = Integer.parseInt(scanner.nextLine());
+        String phoneNumber = null ;
+        do {
+            flag = false;
+            try {
+                phoneNumber = checkPhoneNumber();
+            } catch (FuramaExeption e) {
+                System.out.println(e.getMessage());
+                flag = true;
+            }
+        } while (flag);
         System.out.println("Input name");
-        String name = scanner.nextLine();
+        String name = null;
+        do {
+            flag = false;
+            try {
+                name = checkName();
+            } catch (FuramaExeption e) {
+                System.out.println(e.getMessage());
+                flag = true;
+            }
+        } while (flag);
         System.out.println("Input sex");
         String sex = scanner.nextLine();
         System.out.println("Input Email");
         String email = scanner.nextLine();
         System.out.println("Input ID ");
-        String id = scanner.nextLine();
+        String id = null;
+        do {
+            flag = false;
+            try {
+                id = checkId();
+            } catch (FuramaExeption e) {
+                System.out.println(e.getMessage());
+                flag = true;
+            }
+        } while (flag);
+
         System.out.println("Input Date of birth");
         String dateOfBirth = scanner.nextLine();
         System.out.println("Input level");
@@ -39,7 +79,15 @@ public class EmployeeService implements IEmployeeService {
         System.out.println("Input position");
         String position = scanner.nextLine();
         System.out.println("Input salary");
-        int salary = Integer.parseInt(scanner.nextLine());
+        int salary;
+        do {
+            flag = false;
+            salary = intInput();
+            if (salary <= 0) {
+                flag = true;
+            }
+        }
+        while (flag);
         Employee employee = new Employee(cmnd, phoneNumber, name, sex, email, id, dateOfBirth, level, position, salary);
         employeeRepository.add(employee);
     }
@@ -47,7 +95,7 @@ public class EmployeeService implements IEmployeeService {
     public void editByID() {
         System.out.println("Input Id to edit employee");
         String id = scanner.nextLine();
-        // nếu ở đây tạo 1 Arraylist rồi tham chiếu  về repo thì có khác nhau không ?
+
         if (employeeRepository.searchByID(id) == -1) {
             System.out.println("Sorry, employee has id: " + id + " is not exist");
         } else {
@@ -58,96 +106,175 @@ public class EmployeeService implements IEmployeeService {
     private void edit(int index) {
         ArrayList<Employee> list = employeeRepository.getAll();
         boolean flag = true;
+        boolean tempFlag;
         int value;
-        try {
-            do {
-                System.out.println("------edit employee------");
-                System.out.println("please Choos");
-                System.out.println("1. edit CMND ");
-                System.out.println("2. edit phone number ");
-                System.out.println("3. edit Name ");
-                System.out.println("4. edit Sex ");
-                System.out.println("5. edit Date of birth ");
-                System.out.println("6. edit level ");
-                System.out.println("7. edit position ");
-                System.out.println("8. edit salary ");
-                System.out.println("Other. Quit edit employee ");
-                value = Integer.parseInt(scanner.nextLine());
-                switch (value) {
-                    case 1:
-                        System.out.println("input New CMND");
-                        int newCmnd =intInput();
-                        list.get(index).setCMND(newCmnd);
-                        System.out.println("Edit CMND successful");
-                        break;
-                    case 2:
-                        System.out.println("input New phone number");
-                        int newPhoneNumber = intInput();
-                        list.get(index).setPhoneNumber(newPhoneNumber);
-                        System.out.println("Edit phone number successful");
+        do {
+            System.out.println("------edit employee------");
+            System.out.println("please Choos");
+            System.out.println("1. edit CMND ");
+            System.out.println("2. edit phone number ");
+            System.out.println("3. edit Name ");
+            System.out.println("4. edit Sex ");
+            System.out.println("5. edit Date of birth ");
+            System.out.println("6. edit level ");
+            System.out.println("7. edit position ");
+            System.out.println("8. edit salary ");
+            System.out.println("Other. Quit edit employee ");
+            value = intInput();
+            switch (value) {
+                case 1:
+                    System.out.println("input New CMND");
+                    String newCmnd = null;
+                    do {
+                        tempFlag = false;
+                        try {
+                            newCmnd = checkCmnd();
+                        } catch (FuramaExeption e) {
+                            System.out.println(e.getMessage());
+                            tempFlag = true;
+                        }
+                    } while (tempFlag);
+                    list.get(index).setCMND(newCmnd);
+                    System.out.println("Edit CMND successful");
+                    break;
+                case 2:
+                    System.out.println("input New phone number");
+                    String newPhoneNumber = null;
+                    do {
+                        tempFlag = false;
+                        try {
+                            newPhoneNumber = checkPhoneNumber();
+                        } catch (FuramaExeption e) {
+                            System.out.println(e.getMessage());
+                            tempFlag = true;
+                        }
+                    } while (tempFlag);
+                    list.get(index).setPhoneNumber(newPhoneNumber);
+                    System.out.println("Edit phone number successful");
 
-                        break;
-                    case 3:
-                        System.out.println("input New Name");
-                        String newName = scanner.nextLine();
-                        list.get(index).setName(newName);
-                        System.out.println("Edit Name successful");
+                    break;
+                case 3:
+                    System.out.println("input New Name");
+                    String newName = null;
+                    do {
+                        tempFlag = false;
+                        try {
+                            newName = checkName();
+                        } catch (FuramaExeption e) {
+                            System.out.println(e.getMessage());
+                            tempFlag = true;
+                        }
+                    } while (tempFlag);
+                    list.get(index).setName(newName);
+                    System.out.println("Edit Name successful");
 
-                        break;
-                    case 4:
-                        System.out.println("input New Sex");
-                        String newSex = scanner.nextLine();
-                        list.get(index).setSex(newSex);
-                        System.out.println("Edit Sex successful");
+                    break;
+                case 4:
+                    System.out.println("input New Sex");
+                    String newSex = scanner.nextLine();
+                    list.get(index).setSex(newSex);
+                    System.out.println("Edit Sex successful");
 
-                        break;
-                    case 5:
-                        System.out.println("input New Date of birth");
-                        String newDateOfBirth = scanner.nextLine();
-                        list.get(index).setDateOfBirth(newDateOfBirth);
-                        System.out.println("Edit Date of birth successful");
+                    break;
+                case 5:
+                    System.out.println("input New Date of birth");
+                    String newDateOfBirth = scanner.nextLine();
+                    list.get(index).setDateOfBirth(newDateOfBirth);
+                    System.out.println("Edit Date of birth successful");
 
-                        break;
-                    case 6:
-                        System.out.println("input New level");
-                        String newLevel = scanner.nextLine();
-                        list.get(index).setLevel(newLevel);
-                        System.out.println("Edit level successful");
+                    break;
+                case 6:
+                    System.out.println("input New level");
+                    String newLevel = scanner.nextLine();
+                    list.get(index).setLevel(newLevel);
+                    System.out.println("Edit level successful");
 
-                        break;
-                    case 7:
-                        System.out.println("input New position");
-                        String newPosition = scanner.nextLine();
-                        list.get(index).setPosition(newPosition);
-                        System.out.println("Edit position successful");
+                    break;
+                case 7:
+                    System.out.println("input New position");
+                    String newPosition = scanner.nextLine();
+                    list.get(index).setPosition(newPosition);
+                    System.out.println("Edit position successful");
 
-                        break;
-                    case 8:
-                        System.out.println("input New salary");
-                        int newSalary = intInput();
-                        list.get(index).setSalary(newSalary);
-                        System.out.println("Edit salary successful");
-
-                        break;
-                    default:
-                        flag =false;
-                }
+                    break;
+                case 8:
+                    System.out.println("input New salary");
+                    int newSalary;
+                    do {
+                        tempFlag = false;
+                        newSalary = intInput();
+                        if (newSalary <= 0) {
+                            tempFlag = true;
+                        }
+                    }
+                    while (tempFlag);
+                    list.get(index).setSalary(newSalary);
+                    System.out.println("Edit salary successful");
+                    break;
+                default:
+                    flag = false;
             }
-            while (flag);
         }
-        catch (NumberFormatException nfe){
-            System.out.println("please input Number, try again");
-            edit(index);
-        }
+        while (flag);
     }
-    private int intInput(){
-        int value=0;
-        try {
-             value=Integer.parseInt(scanner.nextLine());
-        }catch (NumberFormatException nfe){
-            System.out.println("please input Number, try again");
-            intInput();
-        }
+
+    private int intInput() {
+        int value = 0;
+        boolean flag;
+        do {
+            flag = false;
+            try {
+                value = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException nfe) {
+                System.out.println("please input Number, try again");
+                flag = true;
+            }
+        } while (flag);
+
         return value;
     }
+
+    private String checkId() throws FuramaExeption {
+        String Id = scanner.nextLine();
+        String regex = "[N][V][-]*(\\d{4})";
+        if (!Pattern.matches(regex,Id)) {
+            throw new FuramaExeption("Error! format of Employee's Id is NV-XXXX X from 0 to 9, try again.");
+        }else return Id;
+
+    }
+
+    private String checkName() throws FuramaExeption {
+        String name = scanner.nextLine();
+        String regex = "\\b[A-Z][a-z]*(?:\\s+[A-Z][a-z]*)*\\b";
+        if (!Pattern.matches(regex,name)) {
+            throw new FuramaExeption("Error! Employee's name must be UpperCase the 1st letter of each word, try again. ");
+        } else return name;
+
+    }
+    private String checkPhoneNumber() throws FuramaExeption{
+        String phoneNumber = scanner.nextLine();
+        String regex = "(|0[3|5|7|8|9])+([0-9]{10})";
+        if(!Pattern.matches(regex,phoneNumber)){
+            throw new FuramaExeption("Error! Employee's phone number must begin 0 and has 10 char, try again. ");
+        } else return phoneNumber;
+
+    }
+    private String checkCmnd() throws FuramaExeption{
+        String cmnd = scanner.nextLine();
+        String regex = "^\\d{9}(?:\\d{3})?$";
+        if(!Pattern.matches(regex,cmnd)){
+            throw new FuramaExeption("Error! Employee's phone number must begin 0 and has 10 char ");
+        } else return cmnd;
+    }
+    private String checkDate() throws FuramaExeption{
+        String date = scanner.nextLine();
+        String regex ="^(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}$";
+        if(!Pattern.matches(regex,date)){
+            throw new FuramaExeption("Error! Employee's phone number must begin 0 and has 10 char ");
+        } else {
+
+        };
+        return  date;
+    }
+
 }

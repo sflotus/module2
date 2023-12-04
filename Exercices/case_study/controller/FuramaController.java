@@ -6,212 +6,205 @@ import java.awt.*;
 import java.util.Scanner;
 
 public class FuramaController {
-    static  private BookingService bookingService = new BookingService();
-    static private ContractService contractService = new ContractService();
-    static  private CustomerService customerService = new CustomerService();
-    static  private EmployeeService employeeService = new EmployeeService();
-    static private FacilityService facilityService = new FacilityService();
+    static final int EMPLOYEE = 1;
+    static final int CUSTOMER = 2;
+    static final int FACILITY = 3;
+    static final int BOOKING = 4;
+    static final int PROMOTION = 5;
     static Scanner scanner = new Scanner(System.in);
-    static final int EMPLOYEE =1;
-    static final int CUSTOMER =2;
-    static final int FACILITY =3;
-    static final int BOOKING =4;
-    static final int PROMOTION =5;
+    static private BookingService bookingService = new BookingService();
+    static private ContractService contractService = new ContractService();
+    static private CustomerService customerService = new CustomerService();
+    static private EmployeeService employeeService = new EmployeeService();
+    static private FacilityService facilityService = new FacilityService();
 
     public void displayMainMenu() {
         int valueChoose;
         boolean flag = true;
-        try {
-            do {
-                System.out.println("---------------MENU--------------");
-                System.out.println("-1. Employee Management         -");
-                System.out.println("-2. Customer Management         -");
-                System.out.println("-3. Facility Management         -");
-                System.out.println("-4. Booking Management          -");
-                System.out.println("-5. Promotion Management        -");
-                System.out.println("-Other. Exit                    -");
-                System.out.println("---------------------------------");
-                valueChoose = Integer.parseInt(scanner.nextLine());
-                switch (valueChoose) {
-                    case EMPLOYEE:
-                        displayEmployeeManagement();
-                        break;
-                    case CUSTOMER:
-                        displayCustomerManagement();
-                        break;
-                    case FACILITY:
-                        displayFacilityManagement();
-                        break;
-                    case BOOKING:
-                        displayBookingManagement();
-                        break;
-                    case PROMOTION:
-                        displayPromotionManagement();
-                        break;
-                    default:
-                        flag = false;
-                }
-
+        do {
+            System.out.println("---------------MENU--------------");
+            System.out.println("-1. Employee Management         -");
+            System.out.println("-2. Customer Management         -");
+            System.out.println("-3. Facility Management         -");
+            System.out.println("-4. Booking Management          -");
+            System.out.println("-5. Promotion Management        -");
+            System.out.println("-Other. Exit                    -");
+            System.out.println("---------------------------------");
+            valueChoose = checkInputValue();
+            switch (valueChoose) {
+                case EMPLOYEE:
+                    displayEmployeeManagement();
+                    break;
+                case CUSTOMER:
+                    displayCustomerManagement();
+                    break;
+                case FACILITY:
+                    displayFacilityManagement();
+                    break;
+                case BOOKING:
+                    displayBookingManagement();
+                    break;
+                case PROMOTION:
+                    displayPromotionManagement();
+                    break;
+                default:
+                    flag = false;
             }
-            while (flag);
-        } catch (NumberFormatException nfe) {
-            System.out.println("please input number");
-            displayMainMenu();
+
         }
+        while (flag);
 
     }
 
     private void displayEmployeeManagement() {
         int value;
         boolean flag = true;
-        try {
-            do {
-                System.out.println("---------------Employee Management--------------");
-                System.out.println("-1. Display list employees                     -");
-                System.out.println("-2. Add new employee                           -");
-                System.out.println("-3. Edit employee                               -");
-                System.out.println("-Other.Return main menu                        -");
-                value = Integer.parseInt(scanner.nextLine());
-                switch (value) {
-                    case 1:
-                        System.out.println("--------- Display list employees-------");
-                        employeeService.diplayAll();
-                        break;
-                    case 2:
-                        System.out.println("--------- Add new employee-------");
-                        employeeService.add();
-                        break;
-                    case 3:
-                        System.out.println("--------- Edit employee-------");
-                        employeeService.editByID();
-                        break;
-                    default:
-                        flag = false;
-                }
-            } while (flag);
-        } catch (NumberFormatException nfe) {
-            System.out.println("please input number");
-            displayEmployeeManagement();
-        }
+
+        do {
+            System.out.println("---------------Employee Management--------------");
+            System.out.println("-1. Display list employees                     -");
+            System.out.println("-2. Add new employee                           -");
+            System.out.println("-3. Edit employee                               -");
+            System.out.println("-Other.Return main menu                        -");
+            value = checkInputValue();
+            switch (value) {
+                case 1:
+                    System.out.println("--------- Display list employees-------");
+                    employeeService.diplayAll();
+                    break;
+                case 2:
+                    System.out.println("--------- Add new employee-------");
+                    employeeService.add();
+                    break;
+                case 3:
+                    System.out.println("--------- Edit employee-------");
+                    employeeService.editByID();
+                    break;
+                default:
+                    flag = false;
+            }
+        } while (flag);
+
     }
 
     private void displayCustomerManagement() {
         int value;
         boolean flag = true;
-        try {
-            do {
-                System.out.println("---------------Customer Management--------------");
-                System.out.println("-1. Display list customers                     -");
-                System.out.println("-2. Add new customer                           -");
-                System.out.println("-3.Edit customer                               -");
-                System.out.println("-Other.Return main menu                        -");
-                System.out.println("------------------------------------------------");
 
-                value = Integer.parseInt(scanner.nextLine());
-                switch (value) {
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    default:
-                        flag = false;
-                }
-            } while (flag);
-        } catch (NumberFormatException nfe) {
-            System.out.println("please input number");
-            displayCustomerManagement();
-        }
+        do {
+            System.out.println("---------------Customer Management--------------");
+            System.out.println("-1. Display list customers                     -");
+            System.out.println("-2. Add new customer                           -");
+            System.out.println("-3.Edit customer                               -");
+            System.out.println("-Other.Return main menu                        -");
+            System.out.println("------------------------------------------------");
+
+            value = checkInputValue();
+            switch (value) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                default:
+                    flag = false;
+            }
+        } while (flag);
+
     }
 
     private void displayFacilityManagement() {
         int value;
         boolean flag = true;
-        try {
-            do {
-                System.out.println("---------------Facility Management -------------");
-                System.out.println("-1. Display list facility                      -");
-                System.out.println("-2. Add new facility                           -");
-                System.out.println("-3.Edit facility                               -");
-                System.out.println("-Other.Return main menu                        -");
-                System.out.println("------------------------------------------------");
-                value = Integer.parseInt(scanner.nextLine());
-                switch (value) {
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    default:
-                        flag = false;
-                }
-            } while (flag);
-        } catch (NumberFormatException nfe) {
-            System.out.println("please input number");
-            displayFacilityManagement();
-        }
+
+        do {
+            System.out.println("---------------Facility Management -------------");
+            System.out.println("-1. Display list facility                      -");
+            System.out.println("-2. Add new facility                           -");
+            System.out.println("-3.Edit facility                               -");
+            System.out.println("-Other.Return main menu                        -");
+            System.out.println("------------------------------------------------");
+            value = checkInputValue();
+            switch (value) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                default:
+                    flag = false;
+            }
+        } while (flag);
+
     }
 
     private void displayBookingManagement() {
         int value;
         boolean flag = true;
-        try {
-            do {
-                System.out.println("---------------Booking Management --------------");
-                System.out.println("-1. Add new booking                            -");
-                System.out.println("-2. Display list booking                       -");
-                System.out.println("-3.Create new contracts                        -");
-                System.out.println("-4.Display list contracts                      -");
-                System.out.println("-5.Edit contracts                              -");
-                System.out.println("-Other.Return main menu                        -");
-                System.out.println("------------------------------------------------");
-                value = Integer.parseInt(scanner.nextLine());
-                switch (value) {
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                    case 5:
-                        break;
-                    default:
-                        flag = false;
-                }
-            } while (flag);
-        } catch (NumberFormatException nfe) {
-            System.out.println("please input number");
-            displayBookingManagement();
-        }
+
+        do {
+            System.out.println("---------------Booking Management --------------");
+            System.out.println("-1. Add new booking                            -");
+            System.out.println("-2. Display list booking                       -");
+            System.out.println("-3.Create new contracts                        -");
+            System.out.println("-4.Display list contracts                      -");
+            System.out.println("-5.Edit contracts                              -");
+            System.out.println("-Other.Return main menu                        -");
+            System.out.println("------------------------------------------------");
+            value = checkInputValue();
+            switch (value) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                default:
+                    flag = false;
+            }
+        } while (flag);
     }
 
     private void displayPromotionManagement() {
         int value;
         boolean flag = true;
-        try {
-            do {
-                System.out.println("---------------Promotion Management --------------");
-                System.out.println("-1. Display list customers use ser               -");
-                System.out.println("-2. Display list customers get voucher           -");
-                System.out.println("-Other.Return main menu                          -");
-                System.out.println("--------------------------------------------------");
+        do {
+            System.out.println("---------------Promotion Management --------------");
+            System.out.println("-1. Display list customers use ser               -");
+            System.out.println("-2. Display list customers get voucher           -");
+            System.out.println("-Other.Return main menu                          -");
+            System.out.println("--------------------------------------------------");
+            value = checkInputValue();
+            switch (value) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                default:
+                    flag = false;
+            }
+        } while (flag);
+    }
+
+    private int checkInputValue() {
+        int value = 0;
+        boolean flag;
+        do {
+            flag = false;
+            try {
                 value = Integer.parseInt(scanner.nextLine());
-                switch (value) {
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    default:
-                        flag = false;
-                }
-            } while (flag);
-        } catch (NumberFormatException nfe) {
-            System.out.println("please input number");
-            displayPromotionManagement();
-        }
+            } catch (NumberFormatException nfe) {
+                System.out.println("please input number");
+                flag = true;
+            }
+        } while (flag);
+
+        return value;
     }
 }
