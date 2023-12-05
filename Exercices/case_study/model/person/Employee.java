@@ -45,6 +45,6 @@ public class Employee extends Person{
         return super.toString() +
                 "level='" + level + '\'' +
                 ", position='" + position + '\'' +
-                ", salary=" + salary;
+                ", salary=" + salary +" VND";
     }
 }

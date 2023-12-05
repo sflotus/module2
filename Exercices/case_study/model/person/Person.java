@@ -79,7 +79,7 @@ public  abstract class Person {
     @Override
     public String toString() {
         return name +
-                "CMND= " + CMND +
+                ": CMND= " + CMND +
                 ", phoneNumber= " + phoneNumber +
                 ", sex= " + sex  +
                 ", email= " + email + '\'' +
