@@ -2,10 +2,10 @@ package Exercices.case_study.model.person;
 
 import java.util.Date;
 
-public  abstract class Person {
+public abstract class Person {
 
-    private  String name,sex,email, id;
-    private String dateOfBirth,phoneNumber,CMND;
+    private String name, sex, email, id;
+    private String dateOfBirth, phoneNumber, CMND;
 
     public Person() {
     }
@@ -78,12 +78,12 @@ public  abstract class Person {
 
     @Override
     public String toString() {
-        return name +
+        return name + ", id= " + id + '\'' +
                 ": CMND= " + CMND +
                 ", phoneNumber= " + phoneNumber +
-                ", sex= " + sex  +
+                ", sex= " + sex +
                 ", email= " + email + '\'' +
-                ", id= " + id + '\'' +
+
                 ", dateOfBirth= " + dateOfBirth;
     }
 }

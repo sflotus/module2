@@ -1,8 +1,8 @@
 package Exercices.case_study.model.facility;
 
 public abstract class Facility {
-    private  String id;
-    private String name;
+    private  String idServices;
+    private String nameServices;
     private  double usingArea;
     private double price;
     private int maxNumPeople;
@@ -11,29 +11,29 @@ public abstract class Facility {
     public Facility() {
     }
 
-    public Facility(String id, String name, double usingArea, double price, int maxNumPeople, String rentalType) {
-        this.id = id;
-        this.name = name;
+    public Facility(String idServices, String nameServices, double usingArea, double price, int maxNumPeople, String rentalType) {
+        this.idServices = idServices;
+        this.nameServices = nameServices;
         this.usingArea = usingArea;
         this.price = price;
         this.maxNumPeople = maxNumPeople;
         this.rentalType = rentalType;
     }
 
-    public String getId() {
-        return id;
+    public String getIdServices() {
+        return idServices;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIdServices(String idServices) {
+        this.idServices = idServices;
     }
 
-    public String getName() {
-        return name;
+    public String getNameServices() {
+        return nameServices;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameServices(String nameServices) {
+        this.nameServices = nameServices;
     }
 
     public double getUsingArea() {
@@ -70,10 +70,10 @@ public abstract class Facility {
 
     @Override
     public String toString() {
-        return name +
-                ": id=" + id +
+        return nameServices +
+                ": id=" + idServices +
                 ", usingArea=" + usingArea +
-                ", price=" + price +
+                ", price=" + price +" VND"+
                 ", maxNumPeople=" + maxNumPeople +
                 ", rentalType='" + rentalType ;
     }

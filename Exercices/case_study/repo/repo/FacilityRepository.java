@@ -31,4 +31,14 @@ public class FacilityRepository implements IFacilityRepository<Facility> {
             System.out.println(f);
         }
     }
+
+    @Override
+    public int searchByID(String id) {
+        for(int i =0;i<facilityList.size();i++){
+            if ( facilityList.get(i).getIdServices().equals(id)){
+                return i;
+            }
+        }
+        return -1;
+    }
 }

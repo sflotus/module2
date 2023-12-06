@@ -8,4 +8,6 @@ public interface IRepository<T> {
     void add(T t);
     void remove(int index);
     void diplayAll();
+
+    int searchByID(String id);
 }

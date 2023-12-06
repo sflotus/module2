@@ -1,49 +1,27 @@
 package Exercices.case_study.model.facility;
 
 public class Room extends Facility{
-    private String roomStandard;
-    private double poolArea;
-    private  int quantityFloor;
+    private String freeService;
 
     public Room() {
     }
 
-    public Room(String id, String name, double usingArea, double price, int maxNumPeople, String rentalType, String roomStandard, double poolArea, int quantityFloor) {
+    public Room(String id, String name, double usingArea, double price, int maxNumPeople, String rentalType, String freeService) {
         super(id, name, usingArea, price, maxNumPeople, rentalType);
-        this.roomStandard = roomStandard;
-        this.poolArea = poolArea;
-        this.quantityFloor = quantityFloor;
+        this.freeService = freeService;
     }
 
-    public String getRoomStandard() {
-        return roomStandard;
+    public String getFreeService() {
+        return freeService;
     }
 
-    public void setRoomStandard(String roomStandard) {
-        this.roomStandard = roomStandard;
-    }
-
-    public double getPoolArea() {
-        return poolArea;
-    }
-
-    public void setPoolArea(double poolArea) {
-        this.poolArea = poolArea;
-    }
-
-    public int getQuantityFloor() {
-        return quantityFloor;
-    }
-
-    public void setQuantityFloor(int quantityFloor) {
-        this.quantityFloor = quantityFloor;
+    public void setFreeService(String freeService) {
+        this.freeService = freeService;
     }
 
     @Override
     public String toString() {
         return super.toString() +
-                "roomStandard= " + roomStandard  +
-                ", poolArea= " + poolArea +
-                ", quantityFloor= " + quantityFloor ;
+                " freeService= " + freeService;
     }
 }

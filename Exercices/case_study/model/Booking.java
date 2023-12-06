@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class Booking {
     private String idBooking, idCustomer, idService;
-    private Date dateStart, dateEnd;
+    private String dateStart, dateEnd;
 
-    public Booking(String idBooking, String idCustomer, String idService, Date dateStart, Date dateEnd) {
+    public Booking(String idBooking, String idCustomer, String idService, String dateStart, String dateEnd) {
         this.idBooking = idBooking;
         this.idCustomer = idCustomer;
         this.idService = idService;
@@ -38,19 +38,19 @@ public class Booking {
         this.idService = idService;
     }
 
-    public Date getDateStart() {
+    public String getDateStart() {
         return dateStart;
     }
 
-    public void setDateStart(Date dateStart) {
+    public void setDateStart(String dateStart) {
         this.dateStart = dateStart;
     }
 
-    public Date getDateEnd() {
+    public String getDateEnd() {
         return dateEnd;
     }
 
-    public void setDateEnd(Date dateEnd) {
+    public void setDateEnd(String dateEnd) {
         this.dateEnd = dateEnd;
     }
 

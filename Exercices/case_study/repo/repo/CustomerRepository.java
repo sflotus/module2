@@ -31,4 +31,12 @@ public class CustomerRepository implements ICustomerRepository<Customer> {
             System.out.println(c);
         }
     }
+    public  int searchByID(String id){
+        for(int i =0;i<customerList.size();i++){
+            if ( customerList.get(i).getId().equals(id)){
+                return i;
+            }
+        }
+        return -1;
+    }
 }

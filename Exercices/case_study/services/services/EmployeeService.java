@@ -25,12 +25,23 @@ public class EmployeeService implements IEmployeeService {
 
     public void add() {
         boolean flag;
+        System.out.println("Input Employee's ID ");
+        String id = null;
+        do {
+            flag = false;
+            try {
+                id = inputId();
+            } catch (FuramaExeption e) {
+                System.out.println(e.getMessage());
+                flag = true;
+            }
+        } while (flag);
         System.out.println(" Input CMND ");
         String cmnd = null;
         do {
             flag = false;
             try {
-                cmnd = checkCmnd();
+                cmnd = inputCmnd();
             } catch (FuramaExeption e) {
                 System.out.println(e.getMessage());
                 flag = true;
@@ -41,7 +52,7 @@ public class EmployeeService implements IEmployeeService {
         do {
             flag = false;
             try {
-                phoneNumber = checkPhoneNumber();
+                phoneNumber = inputPhoneNumber();
             } catch (FuramaExeption e) {
                 System.out.println(e.getMessage());
                 flag = true;
@@ -52,7 +63,7 @@ public class EmployeeService implements IEmployeeService {
         do {
             flag = false;
             try {
-                name = checkName();
+                name = inputName();
             } catch (FuramaExeption e) {
                 System.out.println(e.getMessage());
                 flag = true;
@@ -65,30 +76,20 @@ public class EmployeeService implements IEmployeeService {
         do {
             flag = false;
             try {
-                email = checkEmail();
-            } catch (FuramaExeption e) {
-                System.out.println(e.getMessage());
-                flag = true;
-            }
-        } while (flag);
-        System.out.println("Input ID ");
-        String id = null;
-        do {
-            flag = false;
-            try {
-                id = checkId();
+                email = inputEmail();
             } catch (FuramaExeption e) {
                 System.out.println(e.getMessage());
                 flag = true;
             }
         } while (flag);
 
+
         System.out.println("Input Date of birth");
         String dateOfBirth = null;
         do {
             flag = false;
             try {
-                dateOfBirth = checkDate();
+                dateOfBirth = inputDate();
             } catch (FuramaExeption e) {
                 System.out.println(e.getMessage());
                 flag=true;
@@ -102,7 +103,7 @@ public class EmployeeService implements IEmployeeService {
         int salary;
         do {
             flag = false;
-            salary = intInput();
+            salary = inputValueInt();
             if (salary <= 0) {
                 System.out.println("Error, salary must over 0");
                 flag = true;
@@ -114,9 +115,9 @@ public class EmployeeService implements IEmployeeService {
     }
 
     public void editByID() {
+        showAllId();
         System.out.println("Input Id to edit employee");
         String id = scanner.nextLine();
-
         if (employeeRepository.searchByID(id) == -1) {
             System.out.println("Sorry, employee has id: " + id + " is not exist");
         } else {
@@ -142,7 +143,7 @@ public class EmployeeService implements IEmployeeService {
             System.out.println("8. edit position ");
             System.out.println("9. edit salary ");
             System.out.println("Other. Quit edit employee ");
-            value = intInput();
+            value = inputValueInt();
             switch (value) {
                 case 1:
                     System.out.println("input New CMND");
@@ -150,7 +151,7 @@ public class EmployeeService implements IEmployeeService {
                     do {
                         tempFlag = false;
                         try {
-                            newCmnd = checkCmnd();
+                            newCmnd = inputCmnd();
                         } catch (FuramaExeption e) {
                             System.out.println(e.getMessage());
                             tempFlag = true;
@@ -165,7 +166,7 @@ public class EmployeeService implements IEmployeeService {
                     do {
                         tempFlag = false;
                         try {
-                            newPhoneNumber = checkPhoneNumber();
+                            newPhoneNumber = inputPhoneNumber();
                         } catch (FuramaExeption e) {
                             System.out.println(e.getMessage());
                             tempFlag = true;
@@ -181,7 +182,7 @@ public class EmployeeService implements IEmployeeService {
                     do {
                         tempFlag = false;
                         try {
-                            newName = checkName();
+                            newName = inputName();
                         } catch (FuramaExeption e) {
                             System.out.println(e.getMessage());
                             tempFlag = true;
@@ -204,7 +205,7 @@ public class EmployeeService implements IEmployeeService {
                     do {
                         tempFlag = false;
                         try {
-                            newEmail = checkEmail();
+                            newEmail = inputEmail();
                         } catch (FuramaExeption e) {
                             System.out.println(e.getMessage());
                             tempFlag=true;
@@ -220,7 +221,7 @@ public class EmployeeService implements IEmployeeService {
                     do {
                         tempFlag = false;
                         try {
-                            newDateOfBirth = checkDate();
+                            newDateOfBirth = inputDate();
                         } catch (FuramaExeption e) {
                             System.out.println(e.getMessage());
                             tempFlag=true;
@@ -249,7 +250,7 @@ public class EmployeeService implements IEmployeeService {
                     int newSalary;
                     do {
                         tempFlag = false;
-                        newSalary = intInput();
+                        newSalary = inputValueInt();
                         if (newSalary <= 0) {
                             System.out.println("Error, salary must over 0");
                             tempFlag = true;
@@ -266,7 +267,7 @@ public class EmployeeService implements IEmployeeService {
         while (flag);
     }
 
-    private int intInput() {
+    private int inputValueInt() {
         int value = 0;
         boolean flag;
         do {
@@ -282,7 +283,7 @@ public class EmployeeService implements IEmployeeService {
         return value;
     }
 
-    private String checkId() throws FuramaExeption {
+    private String inputId() throws FuramaExeption {
         String Id = scanner.nextLine();
         String regex = "[N][V][-]*(\\d{4})";
         if (!Pattern.matches(regex, Id)) {
@@ -291,7 +292,7 @@ public class EmployeeService implements IEmployeeService {
 
     }
 
-    private String checkName() throws FuramaExeption {
+    private String inputName() throws FuramaExeption {
         String name = scanner.nextLine();
         String regex = "\\b[A-Z][a-z]*(?:\\s+[A-Z][a-z]*)*\\b";
         if (!Pattern.matches(regex, name)) {
@@ -300,7 +301,7 @@ public class EmployeeService implements IEmployeeService {
 
     }
 
-    private String checkPhoneNumber() throws FuramaExeption {
+    private String inputPhoneNumber() throws FuramaExeption {
         String phoneNumber = scanner.nextLine();
         String regex = "(|0[3|5|7|8|9])+([0-9]{10})";
         if (!Pattern.matches(regex, phoneNumber)) {
@@ -309,7 +310,7 @@ public class EmployeeService implements IEmployeeService {
 
     }
 
-    private String checkCmnd() throws FuramaExeption {
+    private String inputCmnd() throws FuramaExeption {
         String cmnd = scanner.nextLine();
         String regex = "^\\d{9}(?:\\d{3})?$";
         if (!Pattern.matches(regex, cmnd)) {
@@ -317,7 +318,7 @@ public class EmployeeService implements IEmployeeService {
         } else return cmnd;
     }
 
-    private String checkDate() throws FuramaExeption {
+    private String inputDate() throws FuramaExeption {
         String date = scanner.nextLine();
         String regex = "^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01])$";
         int age;
@@ -332,11 +333,19 @@ public class EmployeeService implements IEmployeeService {
             } else throw new FuramaExeption("Employee is under 18 year olds, try again");
         }
     }
-    private String checkEmail() throws FuramaExeption{
+    private String inputEmail() throws FuramaExeption{
         String email = scanner.nextLine();
         String regex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
         if (!Pattern.matches(regex, email)) {
             throw new FuramaExeption("Error! Employee's email is not validated, try again ");
         } else return email;
     }
+    private void showAllId(){
+        ArrayList<Employee> employeeArrayList = employeeRepository.getAll();
+        System.out.println("----------All Employee's Id-----------");
+        for (Employee e:employeeArrayList){
+            System.out.println(e.getName()+": "+ e.getId());
+        }
+    }
+
 }

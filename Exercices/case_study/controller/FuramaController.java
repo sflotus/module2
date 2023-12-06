@@ -95,17 +95,23 @@ public class FuramaController {
             System.out.println("---------------Customer Management--------------");
             System.out.println("-1. Display list customers                     -");
             System.out.println("-2. Add new customer                           -");
-            System.out.println("-3.Edit customer                               -");
+            System.out.println("-3. Edit customer                               -");
             System.out.println("-Other.Return main menu                        -");
             System.out.println("------------------------------------------------");
 
             value = checkInputValue();
             switch (value) {
                 case 1:
+                    System.out.println("--------- Display list customers-------");
+                    customerService.diplayAll();
                     break;
                 case 2:
+                    System.out.println("--------- Add new customer-------");
+                    customerService.add();
                     break;
                 case 3:
+                    System.out.println("--------- Edit customer-------");
+                    customerService.editByID();
                     break;
                 default:
                     flag = false;
@@ -122,16 +128,21 @@ public class FuramaController {
             System.out.println("---------------Facility Management -------------");
             System.out.println("-1. Display list facility                      -");
             System.out.println("-2. Add new facility                           -");
-            System.out.println("-3.Edit facility                               -");
-            System.out.println("-Other.Return main menu                        -");
+            System.out.println("-3. Display list facility maintenance          -");
+            System.out.println("-Other. Return main menu                        -");
             System.out.println("------------------------------------------------");
             value = checkInputValue();
             switch (value) {
                 case 1:
+                    System.out.println("--------- Display list facility -------");
+                    facilityService.diplayAll();
                     break;
                 case 2:
+                    System.out.println("--------- Add new facility  -------");
+                    facilityService.add();
                     break;
                 case 3:
+                    facilityService.diplayFacilityMaintenance();
                     break;
                 default:
                     flag = false;
@@ -148,10 +159,10 @@ public class FuramaController {
             System.out.println("---------------Booking Management --------------");
             System.out.println("-1. Add new booking                            -");
             System.out.println("-2. Display list booking                       -");
-            System.out.println("-3.Create new contracts                        -");
-            System.out.println("-4.Display list contracts                      -");
-            System.out.println("-5.Edit contracts                              -");
-            System.out.println("-Other.Return main menu                        -");
+            System.out.println("-3. Create new contracts                        -");
+            System.out.println("-4. Display list contracts                      -");
+            System.out.println("-5. Edit contracts                              -");
+            System.out.println("-Other. Return main menu                        -");
             System.out.println("------------------------------------------------");
             value = checkInputValue();
             switch (value) {
@@ -176,9 +187,9 @@ public class FuramaController {
         boolean flag = true;
         do {
             System.out.println("---------------Promotion Management --------------");
-            System.out.println("-1. Display list customers use ser               -");
+            System.out.println("-1. Display list customers use service           -");
             System.out.println("-2. Display list customers get voucher           -");
-            System.out.println("-Other.Return main menu                          -");
+            System.out.println("-Other. Return main menu                         -");
             System.out.println("--------------------------------------------------");
             value = checkInputValue();
             switch (value) {

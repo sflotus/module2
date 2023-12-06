@@ -32,4 +32,14 @@ public class ContractRepository implements IContractRepository<Contract> {
             System.out.println(c);
         }
     }
+
+    @Override
+    public int searchByID(String id) {
+        for(int i =0;i<contractList.size();i++){
+            if ( contractList.get(i).getIdContract().equals(id)){
+                return i;
+            }
+        }
+        return -1;
+    }
 }

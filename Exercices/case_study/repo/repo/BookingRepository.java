@@ -33,4 +33,14 @@ public class BookingRepository implements IBookingRepository<Booking> {
         }
     }
 
+    @Override
+    public int searchByID(String id) {
+        for(int i =0;i<bookingList.size();i++){
+            if ( bookingList.get(i).getIdBooking().equals(id)){
+                return i;
+            }
+        }
+        return -1;
+    }
+
 }
