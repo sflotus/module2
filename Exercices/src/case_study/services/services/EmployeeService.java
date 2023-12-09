@@ -6,16 +6,19 @@ import case_study.repo.repo.EmployeeRepository;
 import case_study.services.FuramaExeption;
 import case_study.services.interface_services.IEmployeeService;
 
-import java.awt.*;
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class EmployeeService implements IEmployeeService {
+    private final static String ID_EMPLOYEE_REGEX = "[N][V][-]*(\\d{4})";
+    private final static String NAME_EMPLOYEE_REGEX = "\\b[A-Z][a-z]*(?:\\s+[A-Z][a-z]*)*\\b";
+    private final static String PHONE_NUMBER_REGEX = "(|0[3|5|7|8|9])+([0-9]{10})";
+    private final static String CMND_REGEX = "^\\d{9}(?:\\d{3})?$";
+    private final static String DATE_OF_BIRTH_EREGEX = "^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01])$";
+    private final static String EMAIL_REGEX = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
     Scanner scanner = new Scanner(System.in);
     private IEmployeeRepository employeeRepository = new EmployeeRepository();
 
@@ -26,64 +29,25 @@ public class EmployeeService implements IEmployeeService {
     public void add() {
         boolean flag;
         System.out.println("Input Employee's ID ");
-        String id = null;
+        String id;
         do {
             flag = false;
-            try {
-                id = inputId();
-            } catch (FuramaExeption e) {
-                System.out.println(e.getMessage());
-                flag = true;
-            }
-        } while (flag);
-        System.out.println(" Input CMND ");
-        String cmnd = null;
-        do {
-            flag = false;
-            try {
-                cmnd = inputCmnd();
-            } catch (FuramaExeption e) {
-                System.out.println(e.getMessage());
-                flag = true;
-            }
-        } while (flag);
-        System.out.println("Input phone number");
-        String phoneNumber = null;
-        do {
-            flag = false;
-            try {
-                phoneNumber = inputPhoneNumber();
-            } catch (FuramaExeption e) {
-                System.out.println(e.getMessage());
+            id = inputValueWithRegex(ID_EMPLOYEE_REGEX, "Error! format of Employee's Id is NV-XXXX X from 0 to 9, try again.");
+            if (checkExistId(id)) {
+                System.out.println("ID is Exist, please try again");
                 flag = true;
             }
         } while (flag);
         System.out.println("Input name");
-        String name = null;
-        do {
-            flag = false;
-            try {
-                name = inputName();
-            } catch (FuramaExeption e) {
-                System.out.println(e.getMessage());
-                flag = true;
-            }
-        } while (flag);
+        String name = inputValueWithRegex(NAME_EMPLOYEE_REGEX, "Error! Employee's name must be UpperCase the 1st letter of each word, try again. ");
+        System.out.println(" Input CMND ");
+        String cmnd = inputValueWithRegex(CMND_REGEX, "Error! Employee's CMND has 9 or 12 numbers");
+        System.out.println("Input phone number");
+        String phoneNumber = inputValueWithRegex(PHONE_NUMBER_REGEX, "Error! Employee's phone number must begin 0 and has 10 char, try again.");
         System.out.println("Input sex");
         String sex = scanner.nextLine();
         System.out.println("Input Email");
-        String email = null;
-        do {
-            flag = false;
-            try {
-                email = inputEmail();
-            } catch (FuramaExeption e) {
-                System.out.println(e.getMessage());
-                flag = true;
-            }
-        } while (flag);
-
-
+        String email = inputValueWithRegex(EMAIL_REGEX, "Error! Employee's email is not validated, try again");
         System.out.println("Input Date of birth");
         String dateOfBirth = null;
         do {
@@ -92,7 +56,7 @@ public class EmployeeService implements IEmployeeService {
                 dateOfBirth = inputDate();
             } catch (FuramaExeption e) {
                 System.out.println(e.getMessage());
-                flag=true;
+                flag = true;
             }
         } while (flag);
         System.out.println("Input level");
@@ -126,7 +90,7 @@ public class EmployeeService implements IEmployeeService {
     }
 
     private void edit(int index) {
-        List<Employee> list = employeeRepository.getAll();
+        List<Employee> employeeList = employeeRepository.getAll();
         boolean flag = true;
         boolean tempFlag;
         int value;
@@ -147,71 +111,37 @@ public class EmployeeService implements IEmployeeService {
             switch (value) {
                 case 1:
                     System.out.println("input New CMND");
-                    String newCmnd = null;
-                    do {
-                        tempFlag = false;
-                        try {
-                            newCmnd = inputCmnd();
-                        } catch (FuramaExeption e) {
-                            System.out.println(e.getMessage());
-                            tempFlag = true;
-                        }
-                    } while (tempFlag);
-                    list.get(index).setCMND(newCmnd);
+                    String newCmnd = inputValueWithRegex(CMND_REGEX, "Error! Employee's CMND has 9 or 12 numbers");
+                    employeeList.get(index).setCMND(newCmnd);
                     System.out.println("Edit CMND successful");
                     break;
                 case 2:
                     System.out.println("input New phone number");
-                    String newPhoneNumber = null;
-                    do {
-                        tempFlag = false;
-                        try {
-                            newPhoneNumber = inputPhoneNumber();
-                        } catch (FuramaExeption e) {
-                            System.out.println(e.getMessage());
-                            tempFlag = true;
-                        }
-                    } while (tempFlag);
-                    list.get(index).setPhoneNumber(newPhoneNumber);
+                    String newPhoneNumber = inputValueWithRegex(PHONE_NUMBER_REGEX, "Error! Employee's phone number must begin 0 and has 10 char, try again.");
+                    employeeList.get(index).setPhoneNumber(newPhoneNumber);
                     System.out.println("Edit phone number successful");
 
                     break;
                 case 3:
                     System.out.println("input New Name");
-                    String newName = null;
-                    do {
-                        tempFlag = false;
-                        try {
-                            newName = inputName();
-                        } catch (FuramaExeption e) {
-                            System.out.println(e.getMessage());
-                            tempFlag = true;
-                        }
-                    } while (tempFlag);
-                    list.get(index).setName(newName);
+                    String newName = inputValueWithRegex(NAME_EMPLOYEE_REGEX, "Error! Employee's name must be UpperCase the 1st letter of each word, try again. ");
+
+                    employeeList.get(index).setName(newName);
                     System.out.println("Edit Name successful");
 
                     break;
                 case 4:
                     System.out.println("input New Sex");
                     String newSex = scanner.nextLine();
-                    list.get(index).setSex(newSex);
+                    employeeList.get(index).setSex(newSex);
                     System.out.println("Edit Sex successful");
 
                     break;
                 case 5:
                     System.out.println("input New Email");
-                    String newEmail = null;
-                    do {
-                        tempFlag = false;
-                        try {
-                            newEmail = inputEmail();
-                        } catch (FuramaExeption e) {
-                            System.out.println(e.getMessage());
-                            tempFlag=true;
-                        }
-                    } while (tempFlag);
-                    list.get(index).setEmail(newEmail);
+                    String newEmail = inputValueWithRegex(EMAIL_REGEX, "Error! Employee's email is not validated, try again");
+
+                    employeeList.get(index).setEmail(newEmail);
                     System.out.println("Edit Date of birth successful");
 
                     break;
@@ -224,24 +154,23 @@ public class EmployeeService implements IEmployeeService {
                             newDateOfBirth = inputDate();
                         } catch (FuramaExeption e) {
                             System.out.println(e.getMessage());
-                            tempFlag=true;
+                            tempFlag = true;
                         }
                     } while (tempFlag);
-                    list.get(index).setDateOfBirth(newDateOfBirth);
+                    employeeList.get(index).setDateOfBirth(newDateOfBirth);
                     System.out.println("Edit Date of birth successful");
-
                     break;
                 case 7:
                     System.out.println("input New level");
                     String newLevel = scanner.nextLine();
-                    list.get(index).setLevel(newLevel);
+                    employeeList.get(index).setLevel(newLevel);
                     System.out.println("Edit level successful");
 
                     break;
                 case 8:
                     System.out.println("input New position");
                     String newPosition = scanner.nextLine();
-                    list.get(index).setPosition(newPosition);
+                    employeeList.get(index).setPosition(newPosition);
                     System.out.println("Edit position successful");
 
                     break;
@@ -257,7 +186,7 @@ public class EmployeeService implements IEmployeeService {
                         }
                     }
                     while (tempFlag);
-                    list.get(index).setSalary(newSalary);
+                    employeeList.get(index).setSalary(newSalary);
                     System.out.println("Edit salary successful");
                     break;
                 default:
@@ -265,10 +194,7 @@ public class EmployeeService implements IEmployeeService {
             }
         }
         while (flag);
-        for (Employee employee:list
-             ) {
-            employeeRepository.edit(employee);
-        }
+        employeeRepository.update(employeeList);
     }
 
     private int inputValueInt() {
@@ -287,46 +213,10 @@ public class EmployeeService implements IEmployeeService {
         return value;
     }
 
-    private String inputId() throws FuramaExeption {
-        String Id = scanner.nextLine();
-        String regex = "[N][V][-]*(\\d{4})";
-        if (!Pattern.matches(regex, Id)) {
-            throw new FuramaExeption("Error! format of Employee's Id is NV-XXXX X from 0 to 9, try again.");
-        } else return Id;
-
-    }
-
-    private String inputName() throws FuramaExeption {
-        String name = scanner.nextLine();
-        String regex = "\\b[A-Z][a-z]*(?:\\s+[A-Z][a-z]*)*\\b";
-        if (!Pattern.matches(regex, name)) {
-            throw new FuramaExeption("Error! Employee's name must be UpperCase the 1st letter of each word, try again. ");
-        } else return name;
-
-    }
-
-    private String inputPhoneNumber() throws FuramaExeption {
-        String phoneNumber = scanner.nextLine();
-        String regex = "(|0[3|5|7|8|9])+([0-9]{10})";
-        if (!Pattern.matches(regex, phoneNumber)) {
-            throw new FuramaExeption("Error! Employee's phone number must begin 0 and has 10 char, try again. ");
-        } else return phoneNumber;
-
-    }
-
-    private String inputCmnd() throws FuramaExeption {
-        String cmnd = scanner.nextLine();
-        String regex = "^\\d{9}(?:\\d{3})?$";
-        if (!Pattern.matches(regex, cmnd)) {
-            throw new FuramaExeption("Error! Employee's CMND has 9 or 12 numbers ");
-        } else return cmnd;
-    }
-
     private String inputDate() throws FuramaExeption {
         String date = scanner.nextLine();
-        String regex = "^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01])$";
         int age;
-        if (!Pattern.matches(regex, date)) {
+        if (!Pattern.matches(DATE_OF_BIRTH_EREGEX, date)) {
             throw new FuramaExeption("Error! Date's format is yyyy-mm-dd, try again ");
         } else {
             LocalDate birthDate = LocalDate.parse(date);
@@ -337,18 +227,40 @@ public class EmployeeService implements IEmployeeService {
             } else throw new FuramaExeption("Employee is under 18 year olds, try again");
         }
     }
-    private String inputEmail() throws FuramaExeption{
-        String email = scanner.nextLine();
-        String regex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
-        if (!Pattern.matches(regex, email)) {
-            throw new FuramaExeption("Error! Employee's email is not validated, try again ");
-        } else return email;
+
+    private boolean checkRegex(String regex, String string) {
+        return Pattern.matches(regex, string);
     }
-    private void showAllId(){
+
+    private boolean checkExistId(String id) {
+        List<Employee> employeeList = employeeRepository.getAll();
+        for (Employee employee : employeeList) {
+            if (employee.getId().equals(id)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private String inputValueWithRegex(String REGEX, String errorMessage) {
+        String value;
+        boolean flag;
+        do {
+            flag = false;
+            value = scanner.nextLine();
+            if (!checkRegex(REGEX, value)) {
+                System.out.println(errorMessage);
+                flag = true;
+            }
+        } while (flag);
+        return value;
+    }
+
+    private void showAllId() {
         List<Employee> employeeArrayList = employeeRepository.getAll();
         System.out.println("----------All Employee's Id-----------");
-        for (Employee e:employeeArrayList){
-            System.out.println(e.getName()+": "+ e.getId());
+        for (Employee e : employeeArrayList) {
+            System.out.println(e.getName() + ": " + e.getId());
         }
     }
 

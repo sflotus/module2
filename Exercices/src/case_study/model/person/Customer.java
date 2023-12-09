@@ -34,7 +34,7 @@ public class Customer extends Person{
     @Override
     public String toString() {
         return super.toString() +
-                " address=" + address + '\'' +
+                " address=" + address  +
                 ", typeCustomer= " + typeCustomer ;
     }
 

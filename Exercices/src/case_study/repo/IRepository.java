@@ -13,5 +13,6 @@ public interface IRepository<T> {
 
     int searchByID(String id);
 
-    void edit(T t);
+
+    void update(List<T> t);
 }

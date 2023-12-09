@@ -31,10 +31,13 @@ public class EmployeeRepository implements IEmployeeRepository<Employee> {
         stringList.add(employee.getInforToCSV());
         ReadAndWriteFileCSV.writeListStringToCSV(EMPLOYEE_DATA,stringList,true);
     }
-    public void edit(Employee employee){
+    public void update(List<Employee> employee){
         List<String> stringList = new ArrayList<>();
-        stringList.add(employee.getInforToCSV());
-        ReadAndWriteFileCSV.writeListStringToCSV(EMPLOYEE_DATA,stringList,false);
+        ReadAndWriteFileCSV.deleteDataFile(EMPLOYEE_DATA);
+        for (Employee e:employee) {
+            stringList.add(e.getInforToCSV());
+        }
+        ReadAndWriteFileCSV.writeListStringToCSV(EMPLOYEE_DATA,stringList,true);
     }
     @Override
     public void remove(int index) {

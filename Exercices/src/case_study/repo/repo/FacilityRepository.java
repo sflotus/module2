@@ -34,7 +34,8 @@ public class FacilityRepository implements IFacilityRepository<Facility> {
     }
 
     @Override
-    public void edit(Facility facility) {
+    public void update(List<Facility> t) {
 
     }
+
 }

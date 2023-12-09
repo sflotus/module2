@@ -64,9 +64,12 @@ public class BookingRepository implements IBookingRepository<Booking> {
     }
 
     @Override
-    public void edit(Booking booking) {
+    public void update(List<Booking> bookingList) {
         List<String> stringList = new ArrayList<>();
-        stringList.add(booking.getInforToCSV());
-        ReadAndWriteFileCSV.writeListStringToCSV(BOOKING_DATA,stringList,false);
+        ReadAndWriteFileCSV.deleteDataFile(BOOKING_DATA);
+        for (Booking booking:bookingList) {
+            stringList.add(booking.getInforToCSV());
+        }
+        ReadAndWriteFileCSV.writeListStringToCSV(BOOKING_DATA,stringList,true);
     }
 }

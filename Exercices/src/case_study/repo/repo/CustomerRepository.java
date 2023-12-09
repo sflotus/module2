@@ -35,7 +35,9 @@ private static final String CUSTOMER_DATE="src/case_study/data/person/customer.c
     }
 
     @Override
-    public void edit(Customer customer) {
+    public void update(List<Customer> customerList) {
 
     }
+
+
 }

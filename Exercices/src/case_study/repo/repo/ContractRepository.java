@@ -62,7 +62,9 @@ public class ContractRepository implements IContractRepository<Contract> {
     }
 
     @Override
-    public void edit(Contract contract) {
+    public void update(List<Contract> t) {
 
     }
+
+
 }

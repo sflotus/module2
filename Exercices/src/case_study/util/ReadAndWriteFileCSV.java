@@ -42,4 +42,18 @@ public class ReadAndWriteFileCSV {
         }
         return stringList;
     }
+    public static void deleteDataFile(String filePatch){
+        File file = new File(filePatch);
+        FileWriter fileWriter;
+        BufferedWriter bufferedWriter;
+        try {
+            fileWriter=new FileWriter(file,false);
+            bufferedWriter=new BufferedWriter(fileWriter);
+            bufferedWriter.write("");
+            bufferedWriter.close();
+            fileWriter.close();
+        } catch (IOException e) {
+            System.out.println("Error, we got some problems to delete data");
+        }
+    }
 }
