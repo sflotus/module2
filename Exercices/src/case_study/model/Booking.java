@@ -64,4 +64,7 @@ public class Booking {
                 ", dateEnd=" + dateEnd +
                 '}';
     }
+    public String getInforToCSV(){
+        return idBooking+","+idCustomer+","+idService+","+dateStart+","+dateEnd;
+    }
 }

@@ -5,142 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81a422b3-c51f-4364-9482-b3f06abb7119" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/case_study/repo/interface_repo/IBookingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/repo/interface_repo/IContractRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/repo/interface_repo/ICustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/repo/interface_repo/IEmployeeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_study/repo/interface_repo/IFacilityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss4_class_object/fan/Fan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ss4_class_object/fan/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bonus_exercise/Fruit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bonus_exercise/Fruit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bonus_exercise/FruitIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bonus_exercise/FruitIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bonus_exercise/FruitList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bonus_exercise/FruitList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bonus_exercise/FruitOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bonus_exercise/FruitOut.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bonus_exercise/IFruit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bonus_exercise/IFruit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bonus_exercise/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bonus_exercise/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/controller/FuramaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/controller/FuramaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/model/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/Contract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/model/facility/Facility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/facility/Facility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/model/facility/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/facility/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/model/facility/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/facility/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/model/facility/Villa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/facility/Villa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/model/person/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/person/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/model/person/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/person/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/model/person/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/model/person/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/repo/IRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/repo/IRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/repo/interface_repo/IBookingRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/repo/interface_repo/IContractRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/repo/interface_repo/ICustomerRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/repo/interface_repo/IEmployeeRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/repo/interface_repo/IFacilityRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/repo/repo/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/repo/repo/BookingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/repo/repo/ContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/repo/repo/ContractRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/repo/repo/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/repo/repo/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/repo/repo/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/repo/repo/EmployeeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/repo/repo/FacilityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/repo/repo/FacilityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/services/FuramaExeption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/services/FuramaExeption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/services/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/services/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/services/interface_services/IBookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/services/interface_services/IBookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/services/interface_services/IContactService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/services/interface_services/IContactService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/services/interface_services/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/services/interface_services/ICustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/services/interface_services/IEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/services/interface_services/IEmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/services/interface_services/IFacilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/services/interface_services/IFacilityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/services/services/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/services/services/BookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/services/services/ContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/services/services/ContractService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/services/services/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/services/services/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/services/services/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/services/services/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/services/services/FacilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/services/services/FacilityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/view/FuramaView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_study/view/FuramaView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercise_mvc/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercise_mvc/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercise_mvc/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercise_mvc/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercise_mvc/repo/IProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercise_mvc/repo/IProductRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercise_mvc/repo/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercise_mvc/repo/ProductRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercise_mvc/services/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercise_mvc/services/IProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercise_mvc/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercise_mvc/services/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercise_mvc/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercise_mvc/view/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss10_arraylist/MyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_arraylist/MyList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss10_arraylist/MyListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss10_arraylist/MyListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_stack_queue/change_to_binary/ChangeToBinary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss11_stack_queue/change_to_binary/ChangeToBinary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_stack_queue/change_to_binary/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss11_stack_queue/change_to_binary/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_stack_queue/check_bracket/CheckBracket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss11_stack_queue/check_bracket/CheckBracket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_stack_queue/check_bracket/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss11_stack_queue/check_bracket/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_stack_queue/check_palindrome_using_queue/CheckPalindromeUsingQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss11_stack_queue/check_palindrome_using_queue/CheckPalindromeUsingQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_stack_queue/check_palindrome_using_queue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss11_stack_queue/check_palindrome_using_queue/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_stack_queue/stack/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss11_stack_queue/stack/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_stack_queue/stack/ReverseByUsingStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss11_stack_queue/stack/ReverseByUsingStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_java_collection/count_repeat_char/CountRepeatChar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss12_java_collection/count_repeat_char/CountRepeatChar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_java_collection/count_repeat_char/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss12_java_collection/count_repeat_char/MainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_java_collection/practice_java_collection/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss12_java_collection/practice_java_collection/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_java_collection/practice_java_collection/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss12_java_collection/practice_java_collection/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_java_collection/practice_java_collection/repo/IProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss12_java_collection/practice_java_collection/repo/IProductRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_java_collection/practice_java_collection/repo/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss12_java_collection/practice_java_collection/repo/ProductRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_java_collection/practice_java_collection/services/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss12_java_collection/practice_java_collection/services/IProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_java_collection/practice_java_collection/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss12_java_collection/practice_java_collection/services/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_java_collection/practice_java_collection/services/SortProductByPriceASC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss12_java_collection/practice_java_collection/services/SortProductByPriceASC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_java_collection/practice_java_collection/services/SortProductByPriceDEC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss12_java_collection/practice_java_collection/services/SortProductByPriceDEC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_java_collection/practice_java_collection/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss12_java_collection/practice_java_collection/view/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss13_thuat_toan_tim_kiem/binary_search/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss13_thuat_toan_tim_kiem/binary_search/BinarySearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss13_thuat_toan_tim_kiem/longest_increasing_string/LongestIncreasingString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss13_thuat_toan_tim_kiem/longest_increasing_string/LongestIncreasingString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss13_thuat_toan_tim_kiem/longest_string/LongestString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss13_thuat_toan_tim_kiem/longest_string/LongestString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss14_thuat_toan_sap_xep/setting_insertion_sort/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss14_thuat_toan_sap_xep/setting_insertion_sort/InsertionSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss14_thuat_toan_sap_xep/whatching_insertion_sort/WatchingInsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss14_thuat_toan_sap_xep/whatching_insertion_sort/WatchingInsertionSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss15_exception/Illegal_triangle_exception/IllegalTriangleException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss15_exception/Illegal_triangle_exception/IllegalTriangleException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss15_exception/Illegal_triangle_exception/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss15_exception/Illegal_triangle_exception/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss2_array_and_loop/PrimeUnder100.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss2_array_and_loop/PrimeUnder100.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss2_array_and_loop/PrintGeometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss2_array_and_loop/PrintGeometry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss2_array_and_loop/ShowPrime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss2_array_and_loop/ShowPrime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss3_method_in_java/AddIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_method_in_java/AddIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss3_method_in_java/ConcatArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_method_in_java/ConcatArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss3_method_in_java/CountRepeatChar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_method_in_java/CountRepeatChar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss3_method_in_java/FindMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_method_in_java/FindMax.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss3_method_in_java/FindMin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_method_in_java/FindMin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss3_method_in_java/RemoveIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_method_in_java/RemoveIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss3_method_in_java/SumColum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_method_in_java/SumColum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss3_method_in_java/SumDiagonalLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss3_method_in_java/SumDiagonalLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss4_class_object/Fan/Fan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss4_class_object/Fan/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss4_class_object/phuong_trinh_bac_2/GiaiPhuongTrinhBac2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss4_class_object/phuong_trinh_bac_2/GiaiPhuongTrinhBac2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss4_class_object/phuong_trinh_bac_2/QuadraticEquation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss4_class_object/phuong_trinh_bac_2/QuadraticEquation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss4_class_object/stop_watch/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss4_class_object/stop_watch/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss4_class_object/stop_watch/StopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss4_class_object/stop_watch/StopWatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss5_access_modifier/AccessModifier/Circles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss5_access_modifier/AccessModifier/Circles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss5_access_modifier/AccessModifier/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss5_access_modifier/AccessModifier/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss5_access_modifier/student/MainStundent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss5_access_modifier/student/MainStundent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss5_access_modifier/student/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss5_access_modifier/student/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss6_inheritance_oop/circle_and_cylinder/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance_oop/circle_and_cylinder/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss6_inheritance_oop/circle_and_cylinder/Cylinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance_oop/circle_and_cylinder/Cylinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss6_inheritance_oop/circle_and_cylinder/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance_oop/circle_and_cylinder/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss6_inheritance_oop/point2d_point3d/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance_oop/point2d_point3d/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss6_inheritance_oop/point2d_point3d/Point2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance_oop/point2d_point3d/Point2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss6_inheritance_oop/point2d_point3d/Point3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance_oop/point2d_point3d/Point3D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss6_inheritance_oop/point_and_moveablepoint/MainPointAndMovablePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance_oop/point_and_moveablepoint/MainPointAndMovablePoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss6_inheritance_oop/point_and_moveablepoint/MovablePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance_oop/point_and_moveablepoint/MovablePoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss6_inheritance_oop/point_and_moveablepoint/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance_oop/point_and_moveablepoint/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss6_inheritance_oop/test/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance_oop/test/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss6_inheritance_oop/test/MainHuman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance_oop/test/MainHuman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss6_inheritance_oop/test/Male.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss6_inheritance_oop/test/Male.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_abstract_interface/interface_colorable/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_abstract_interface/interface_colorable/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_abstract_interface/interface_colorable/CircleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_abstract_interface/interface_colorable/CircleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_abstract_interface/interface_colorable/Colorable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_abstract_interface/interface_colorable/Colorable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_abstract_interface/interface_colorable/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_abstract_interface/interface_colorable/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_abstract_interface/interface_colorable/RectangleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_abstract_interface/interface_colorable/RectangleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_abstract_interface/interface_colorable/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_abstract_interface/interface_colorable/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_abstract_interface/interface_colorable/ShapeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_abstract_interface/interface_colorable/ShapeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_abstract_interface/interface_colorable/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_abstract_interface/interface_colorable/Square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_abstract_interface/interface_colorable/SquareTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_abstract_interface/interface_colorable/SquareTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_abstract_interface/interface_resizeable/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_abstract_interface/interface_resizeable/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_abstract_interface/interface_resizeable/CircleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_abstract_interface/interface_resizeable/CircleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_abstract_interface/interface_resizeable/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_abstract_interface/interface_resizeable/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_abstract_interface/interface_resizeable/RectangleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_abstract_interface/interface_resizeable/RectangleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_abstract_interface/interface_resizeable/Resizeable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_abstract_interface/interface_resizeable/Resizeable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_abstract_interface/interface_resizeable/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_abstract_interface/interface_resizeable/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_abstract_interface/interface_resizeable/ShapeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_abstract_interface/interface_resizeable/ShapeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_abstract_interface/interface_resizeable/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_abstract_interface/interface_resizeable/Square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_abstract_interface/interface_resizeable/SquareTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ss7_abstract_interface/interface_resizeable/SquareTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../module2.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,22 +34,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/CODEGYM-A0723I1-NguyenAnhTuan/module2/Exercices&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;E:/CODEGYM-A0723I1-NguyenAnhTuan/module2/ss1_introduction_to_java/src/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/CODEGYM/BOOTCAMP_PRE/module2/Exercices/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "onboarding.tips.debug.path": "E:/CODEGYM-A0723I1-NguyenAnhTuan/module2/ss1_introduction_to_java/src/Main.java",
+    "settings.editor.selected.configurable": "configurable.group.language",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\CODEGYM-A0723I1-NguyenAnhTuan\module2\Exercices\src" />
@@ -249,6 +114,7 @@
       <workItem from="1697638316191" duration="260000" />
       <workItem from="1702042452942" duration="3224000" />
       <workItem from="1702052525055" duration="700000" />
+      <workItem from="1702128486018" duration="20000" />
     </task>
     <servers />
   </component>

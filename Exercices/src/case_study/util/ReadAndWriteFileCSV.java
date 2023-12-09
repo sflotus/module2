@@ -10,7 +10,7 @@ public class ReadAndWriteFileCSV {
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {
-            fileWriter=new FileWriter(file);
+            fileWriter=new FileWriter(file,append);
             bufferedWriter=new BufferedWriter(fileWriter);
             for( String line : stringList){
                 bufferedWriter.write(line);
@@ -38,7 +38,7 @@ public class ReadAndWriteFileCSV {
             bufferedReader.close();
             fileReader.close();
         } catch (IOException e) {
-            System.out.println("Error, we got some problems to write data");
+            System.out.println("Error, we got some problems to read data");
         }
         return stringList;
     }

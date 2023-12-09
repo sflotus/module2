@@ -52,4 +52,7 @@ public class Contract {
                 ", totalMoney=" + totalMoney +
                 '}';
     }
+    public String getInforToCSV(){
+        return idContract+","+idBooking+","+depositMoney+","+totalMoney;
+    }
 }
