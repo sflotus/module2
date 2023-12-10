@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContractRepository implements IContractRepository<Contract> {
-    private static final String CONTRACT_DATA = "src/case_study/data/booking.csv";
+    private static final String CONTRACT_DATA = "case_study/data/booking.csv";
 
     @Override
     public List<Contract> getAll() {

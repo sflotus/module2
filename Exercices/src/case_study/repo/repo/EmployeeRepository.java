@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeRepository implements IEmployeeRepository<Employee> {
-    private static final String EMPLOYEE_DATA="src/case_study/data/person/employee.csv";
+    private static final String EMPLOYEE_DATA="case_study/data/person/employee.csv";
 
 
     @Override

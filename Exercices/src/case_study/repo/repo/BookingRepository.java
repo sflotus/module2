@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookingRepository implements IBookingRepository<Booking> {
-    private static final String BOOKING_DATA = "src/case_study/data/booking.csv";
+    private static final String BOOKING_DATA = "case_study/data/booking.csv";
 
 
     @Override

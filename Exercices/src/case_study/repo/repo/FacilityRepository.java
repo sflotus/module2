@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FacilityRepository implements IFacilityRepository<Facility> {
-    private static final String FACILITY_DATA="src/case_study/data/facility/facility.csv";
+    private static final String FACILITY_DATA="case_study/data/facility/facility.csv";
     @Override
     public List<Facility> getAll() {
         return null;

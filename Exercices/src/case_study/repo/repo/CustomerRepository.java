@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerRepository implements ICustomerRepository<Customer> {
-private static final String CUSTOMER_DATE="src/case_study/data/person/customer.csv";
+private static final String CUSTOMER_DATE="case_study/data/person/customer.csv";
 
     @Override
     public List<Customer> getAll() {
