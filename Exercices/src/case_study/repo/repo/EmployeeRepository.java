@@ -51,13 +51,6 @@ public class EmployeeRepository implements IEmployeeRepository<Employee> {
         ReadAndWriteFileCSV.writeListStringToCSV(EMPLOYEE_DATA,stringList,false);
     }
 
-    @Override
-    public void diplayAll() {
-        List<Employee> employeeList = getAll();
-        for(Employee e:employeeList){
-            System.out.println(e);
-        }
-    }
     public  int searchByID(String id){
         List<Employee> employeeList = getAll();
         for(int i =0;i<employeeList.size();i++){

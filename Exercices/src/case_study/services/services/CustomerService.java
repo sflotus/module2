@@ -19,7 +19,10 @@ public class CustomerService implements ICustomerService {
     private ICustomerRepository customerRepository = new CustomerRepository();
 
     public void diplayAll() {
-        customerRepository.diplayAll();
+        List<Customer> customerList = customerRepository.getAll();
+        for (Customer c : customerList) {
+            System.out.println(c);
+        }
     }
 
     public void add() {

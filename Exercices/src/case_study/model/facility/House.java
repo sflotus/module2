@@ -35,4 +35,9 @@ public class House extends Facility{
                 " roomStandard= " + roomStandard +
                 ", quantityFloor=" + quantityFloor;
     }
+
+    @Override
+    public String getInforToCSV() {
+        return super.getInforToCSV() + "," + roomStandard + "," + quantityFloor;
+    }
 }

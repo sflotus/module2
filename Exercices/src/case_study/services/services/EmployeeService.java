@@ -23,7 +23,10 @@ public class EmployeeService implements IEmployeeService {
     private IEmployeeRepository employeeRepository = new EmployeeRepository();
 
     public void diplayAll() {
-        employeeRepository.diplayAll();
+        List<Employee> employeeList = employeeRepository.getAll();
+        for (Employee e : employeeList) {
+            System.out.println(e);
+        }
     }
 
     public void add() {

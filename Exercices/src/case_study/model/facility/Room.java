@@ -24,4 +24,9 @@ public class Room extends Facility{
         return super.toString() +
                 " freeService= " + freeService;
     }
+
+    @Override
+    public String getInforToCSV() {
+        return super.getInforToCSV() + "," + freeService;
+    }
 }

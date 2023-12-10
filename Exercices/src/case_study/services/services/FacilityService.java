@@ -4,11 +4,13 @@ import case_study.model.facility.Facility;
 import case_study.model.facility.House;
 import case_study.model.facility.Room;
 import case_study.model.facility.Villa;
+import case_study.model.person.Customer;
 import case_study.repo.interface_repo.IFacilityRepository;
 import case_study.repo.repo.FacilityRepository;
 import case_study.services.FuramaExeption;
 import case_study.services.interface_services.IFacilityService;
 
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -23,7 +25,10 @@ public class FacilityService implements IFacilityService {
 
 
     public void diplayAll() {
-        facilityRepository.diplayAll();
+        List<Facility> facilityList = facilityRepository.getAll();
+        for (Facility f : facilityList) {
+            System.out.println(f);
+        }
     }
 
 
@@ -50,6 +55,11 @@ public class FacilityService implements IFacilityService {
                     flag = false;
             }
         } while (flag);
+    }
+
+    @Override
+    public void editByID() {
+
     }
 
     @Override
@@ -139,6 +149,7 @@ public class FacilityService implements IFacilityService {
         Facility villa = new Villa(idService, nameSerivce, usingArea, priceForRent, maxNumPeople, rentalType, roomStandard, poolArea, quantityFloor);
         return villa;
     }
+
     private Facility addNewHouse(){
         boolean flag;
         System.out.println("Input House's ID Service ");

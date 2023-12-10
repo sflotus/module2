@@ -77,4 +77,8 @@ public abstract class Facility {
                 ", maxNumPeople=" + maxNumPeople +
                 ", rentalType='" + rentalType ;
     }
+
+    public String getInforToCSV() {
+        return idServices + "," + nameServices + "," + usingArea + "," + price + "," + maxNumPeople + "," + rentalType;
+    }
 }

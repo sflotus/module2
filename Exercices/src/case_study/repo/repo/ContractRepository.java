@@ -42,14 +42,6 @@ public class ContractRepository implements IContractRepository<Contract> {
     }
 
     @Override
-    public void diplayAll() {
-        List<Contract> contractList = getAll();
-        for (Contract contract : contractList) {
-            System.out.println(contract);
-        }
-    }
-
-    @Override
     public int searchByID(String idContract) {
         List<Contract> contractList = getAll();
         for (int i=0;i<contractList.size();i++){

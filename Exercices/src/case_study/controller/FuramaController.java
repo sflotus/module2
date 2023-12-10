@@ -1,5 +1,6 @@
 package case_study.controller;
 
+import case_study.repo.repo.EmployeeRepository;
 import case_study.services.services.*;
 
 import java.util.Scanner;
@@ -54,7 +55,6 @@ public class FuramaController {
         while (flag);
 
     }
-
     private void displayEmployeeManagement() {
         int value;
         boolean flag = true;

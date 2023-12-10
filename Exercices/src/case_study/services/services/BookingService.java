@@ -10,11 +10,15 @@ public class BookingService implements IBookingService {
 
   @Override
   public void diplayAll() {
-
   }
 
   @Override
   public void add() {
+
+  }
+
+  @Override
+  public void editByID() {
 
   }
 }

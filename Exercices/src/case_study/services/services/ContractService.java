@@ -16,4 +16,9 @@ public class ContractService implements IContactService {
     public void add() {
 
     }
+
+    @Override
+    public void editByID() {
+
+    }
 }

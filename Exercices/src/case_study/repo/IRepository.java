@@ -9,10 +9,6 @@ public interface IRepository<T> {
     List<T> getAll();
     void add(T t);
     void remove(int index);
-    void diplayAll();
-
     int searchByID(String id);
-
-
     void update(List<T> t);
 }

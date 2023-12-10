@@ -45,14 +45,6 @@ public class BookingRepository implements IBookingRepository<Booking> {
     }
 
     @Override
-    public void diplayAll() {
-    List<Booking> bookingList = getAll();
-        for (Booking booking:bookingList) {
-            System.out.println(booking);
-        }
-    }
-
-    @Override
     public int searchByID(String idBooking) {
         List<Booking> bookingList = getAll();
         for (int i =0; i <bookingList.size();i++){
