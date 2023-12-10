@@ -3,7 +3,6 @@ package case_study.repo.repo;
 import case_study.model.facility.Facility;
 import case_study.repo.interface_repo.IFacilityRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class FacilityRepository implements IFacilityRepository<Facility> {

@@ -1,6 +1,5 @@
 package case_study.repo.repo;
 
-import case_study.model.Booking;
 import case_study.model.Contract;
 import case_study.repo.interface_repo.IContractRepository;
 import case_study.util.ReadAndWriteFileCSV;

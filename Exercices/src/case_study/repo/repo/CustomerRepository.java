@@ -3,7 +3,6 @@ package case_study.repo.repo;
 import case_study.model.person.Customer;
 import case_study.repo.interface_repo.ICustomerRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerRepository implements ICustomerRepository<Customer> {
