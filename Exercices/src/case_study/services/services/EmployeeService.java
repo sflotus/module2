@@ -8,6 +8,7 @@ import case_study.services.interface_services.IEmployeeService;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -222,12 +223,17 @@ public class EmployeeService implements IEmployeeService {
         if (!Pattern.matches(DATE_OF_BIRTH_EREGEX, date)) {
             throw new FuramaExeption("Error! Date's format is yyyy-mm-dd, try again ");
         } else {
-            LocalDate birthDate = LocalDate.parse(date);
-            LocalDate now = LocalDate.now();
-            age = Period.between(birthDate, now).getYears();
-            if (age > 18) {
-                return date;
-            } else throw new FuramaExeption("Employee is under 18 year olds, try again");
+            try {
+                LocalDate birthDate = LocalDate.parse(date);
+                LocalDate now = LocalDate.now();
+                age = Period.between(birthDate, now).getYears();
+                if (age > 18) {
+                    return date;
+                } else throw new FuramaExeption("Employee is under 18 year olds, try again");
+            } catch (DateTimeParseException e) {
+                throw new FuramaExeption("Error! Date's format is yyyy-mm-dd, try again ");
+            }
+
         }
     }
 
