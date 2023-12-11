@@ -58,10 +58,10 @@ public class BookingRepository implements IBookingRepository<Booking> {
     @Override
     public void update(List<Booking> bookingList) {
         List<String> stringList = new ArrayList<>();
-        ReadAndWriteFileCSV.deleteDataFile(BOOKING_DATA);
+//        ReadAndWriteFileCSV.deleteDataFile(BOOKING_DATA);
         for (Booking booking:bookingList) {
             stringList.add(booking.getInforToCSV());
         }
-        ReadAndWriteFileCSV.writeListStringToCSV(BOOKING_DATA,stringList,true);
+        ReadAndWriteFileCSV.writeListStringToCSV(BOOKING_DATA, stringList, false);
     }
 }

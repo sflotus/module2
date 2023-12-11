@@ -18,7 +18,7 @@ public class FacilityService implements IFacilityService {
     private final static String REGEX_VILLA = "[S][V][V][L][-]*(\\d{4})";
     private final static String REGEX_HOUSE = "[S][V][H][O][-]*(\\d{4})";
     private final static String REGEX_ROOM = "[S][V][R][O][-]*(\\d{4})";
-    private final static String REGEX_NAMES_SERVICES = "^[A-Z][a-z]*";
+    private final static String REGEX_NAMES_SERVICES = "^[A-Z][a-z ]*$";
 
     Scanner scanner = new Scanner(System.in);
     private IFacilityRepository facilityRepository = new FacilityRepository();
@@ -76,6 +76,10 @@ public class FacilityService implements IFacilityService {
             flag = false;
             try {
                 idService = inputId(REGEX_VILLA);
+                if (checkExistFacilityId(idService)) {
+                    System.out.println("Error, Id has Exits, Try again");
+                    flag = true;
+                }
             } catch (FuramaExeption e) {
                 System.out.println(e.getMessage());
                 flag = true;
@@ -146,8 +150,8 @@ public class FacilityService implements IFacilityService {
                 flag=true;
             }
         }while (flag);
-        Facility villa = new Villa(idService, nameSerivce, usingArea, priceForRent, maxNumPeople, rentalType, roomStandard, poolArea, quantityFloor);
-        return villa;
+        return new Villa(idService, nameSerivce, usingArea, priceForRent, maxNumPeople, rentalType, roomStandard, poolArea, quantityFloor);
+
     }
 
     private Facility addNewHouse(){
@@ -158,6 +162,10 @@ public class FacilityService implements IFacilityService {
             flag = false;
             try {
                 idService = inputId(REGEX_HOUSE);
+                if (checkExistFacilityId(idService)) {
+                    System.out.println("Error, Id has Exits, Try again");
+                    flag = true;
+                }
             } catch (FuramaExeption e) {
                 System.out.println(e.getMessage());
                 flag = true;
@@ -208,7 +216,7 @@ public class FacilityService implements IFacilityService {
         String rentalType = scanner.nextLine();
         System.out.println("Input House's room standard");
         String roomStandard = scanner.nextLine();
-        System.out.println("Input Villa's quantity floor");
+        System.out.println("Input House's quantity floor");
         int quantityFloor;
         do {
             flag = false;
@@ -218,8 +226,7 @@ public class FacilityService implements IFacilityService {
                 flag=true;
             }
         }while (flag);
-        Facility house= new  House(idService,nameSerivce,usingArea,priceForRent,maxNumPeople,rentalType,roomStandard,quantityFloor);
-        return house;
+        return new House(idService, nameSerivce, usingArea, priceForRent, maxNumPeople, rentalType, roomStandard, quantityFloor);
     }
     private Facility addNewRoom(){
         boolean flag;
@@ -229,6 +236,10 @@ public class FacilityService implements IFacilityService {
             flag = false;
             try {
                 idService = inputId(REGEX_ROOM);
+                if (checkExistFacilityId(idService)) {
+                    System.out.println("Error, Id has Exits, Try again");
+                    flag = true;
+                }
             } catch (FuramaExeption e) {
                 System.out.println(e.getMessage());
                 flag = true;
@@ -279,8 +290,7 @@ public class FacilityService implements IFacilityService {
         String rentalType = scanner.nextLine();
         System.out.println("Input Room's free service");
         String freeService = scanner.nextLine();
-        Facility room = new Room(idService,nameSerivce,usingArea,priceForRent,maxNumPeople,rentalType,freeService);
-        return room;
+        return new Room(idService, nameSerivce, usingArea, priceForRent, maxNumPeople, rentalType, freeService);
     }
     private int inputValueInt() {
         int value = 0;
@@ -330,5 +340,15 @@ public class FacilityService implements IFacilityService {
             throw new FuramaExeption("Error! Facility's name service must be UpperCase the 1st letter, try again. ");
         } else return name;
 
+    }
+
+    private boolean checkExistFacilityId(String id) {
+        List<Facility> facilityList = facilityRepository.getAll();
+        for (Facility facility : facilityList) {
+            if (facility.getIdServices().equals(id)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

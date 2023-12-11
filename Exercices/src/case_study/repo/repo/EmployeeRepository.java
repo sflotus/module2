@@ -33,11 +33,11 @@ public class EmployeeRepository implements IEmployeeRepository<Employee> {
     }
     public void update(List<Employee> employee){
         List<String> stringList = new ArrayList<>();
-        ReadAndWriteFileCSV.deleteDataFile(EMPLOYEE_DATA);
+//        ReadAndWriteFileCSV.deleteDataFile(EMPLOYEE_DATA);
         for (Employee e:employee) {
             stringList.add(e.getInforToCSV());
         }
-        ReadAndWriteFileCSV.writeListStringToCSV(EMPLOYEE_DATA,stringList,true);
+        ReadAndWriteFileCSV.writeListStringToCSV(EMPLOYEE_DATA, stringList, false);
     }
     @Override
     public void remove(int index) {

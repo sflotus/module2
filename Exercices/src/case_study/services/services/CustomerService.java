@@ -33,6 +33,10 @@ public class CustomerService implements ICustomerService {
             flag = false;
             try {
                 customerId = inputId();
+                if (checkExistCustomerId(customerId)) {
+                    flag = true;
+                    System.out.println("Error, Id customer has exist, try again.");
+                }
             } catch (FuramaExeption e) {
                 System.out.println(e.getMessage());
                 flag = true;
@@ -347,5 +351,15 @@ public class CustomerService implements ICustomerService {
             }
         }while (flag);
         return typeCustomer;
+    }
+
+    private boolean checkExistCustomerId(String id) {
+        List<Customer> customerList = customerRepository.getAll();
+        for (Customer customer : customerList) {
+            if (customer.getId().equals(id)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

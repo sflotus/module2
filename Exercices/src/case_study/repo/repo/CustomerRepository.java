@@ -56,7 +56,7 @@ public class CustomerRepository implements ICustomerRepository<Customer> {
     @Override
     public void update(List<Customer> customerList) {
         List<String> stringList = new ArrayList<>();
-        ReadAndWriteFileCSV.deleteDataFile(CUSTOMER_DATA);
+//        ReadAndWriteFileCSV.deleteDataFile(CUSTOMER_DATA);
         for (Customer customer : customerList) {
             stringList.add(customer.getInforToCSV());
         }

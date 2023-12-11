@@ -68,12 +68,12 @@ public class FacilityRepository implements IFacilityRepository<Facility> {
     @Override
     public void update(List<Facility> facilityList) {
         List<String> stringList = new ArrayList<>();
-        ReadAndWriteFileCSV.deleteDataFile(FACILITY_DATA);
+//        ReadAndWriteFileCSV.deleteDataFile(FACILITY_DATA);
         for (Facility facility : facilityList
         ) {
             stringList.add(facility.getInforToCSV());
         }
-        ReadAndWriteFileCSV.writeListStringToCSV(FACILITY_DATA, stringList, true);
+        ReadAndWriteFileCSV.writeListStringToCSV(FACILITY_DATA, stringList, false);
     }
 
 }

@@ -63,8 +63,9 @@ public class FuramaController {
             System.out.println("---------------Employee Management--------------");
             System.out.println("-1. Display list employees                     -");
             System.out.println("-2. Add new employee                           -");
-            System.out.println("-3. Edit employee                               -");
+            System.out.println("-3. Edit employee                              -");
             System.out.println("-Other.Return main menu                        -");
+            System.out.printf("-------------------------------------------------");
             value = checkInputValue();
             switch (value) {
                 case 1:
@@ -94,7 +95,7 @@ public class FuramaController {
             System.out.println("---------------Customer Management--------------");
             System.out.println("-1. Display list customers                     -");
             System.out.println("-2. Add new customer                           -");
-            System.out.println("-3. Edit customer                               -");
+            System.out.println("-3. Edit customer                              -");
             System.out.println("-Other.Return main menu                        -");
             System.out.println("------------------------------------------------");
 
@@ -128,7 +129,7 @@ public class FuramaController {
             System.out.println("-1. Display list facility                      -");
             System.out.println("-2. Add new facility                           -");
             System.out.println("-3. Display list facility maintenance          -");
-            System.out.println("-Other. Return main menu                        -");
+            System.out.println("-Other. Return main menu                       -");
             System.out.println("------------------------------------------------");
             value = checkInputValue();
             switch (value) {
