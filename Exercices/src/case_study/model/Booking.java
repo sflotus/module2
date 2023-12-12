@@ -2,7 +2,7 @@ package case_study.model;
 
 import java.util.Date;
 
-public class Booking {
+public class Booking implements Comparable<Booking> {
     private String idBooking, idCustomer, idService;
     private String dateStart, dateEnd;
 
@@ -56,15 +56,23 @@ public class Booking {
 
     @Override
     public String toString() {
-        return "{" +
-                "idBooking='" + idBooking + '\'' +
-                ", idCustomer='" + idCustomer + '\'' +
-                ", idService='" + idService + '\'' +
-                ", dateStart=" + dateStart +
-                ", dateEnd=" + dateEnd +
-                '}';
+        return "idBooking= '" + idBooking + '\'' +
+                ", idCustomer= '" + idCustomer + '\'' +
+                ", idService= '" + idService + '\'' +
+                ", dateStart= " + dateStart +
+                ", dateEnd= " + dateEnd;
     }
     public String getInforToCSV(){
         return idBooking+","+idCustomer+","+idService+","+dateStart+","+dateEnd;
+    }
+
+    @Override
+    public int compareTo(Booking booking) {
+        int dateCompare = booking.dateStart.compareTo(this.dateStart);
+        if (dateCompare == 0) {
+            return booking.dateEnd.compareTo(this.dateEnd);
+
+        }
+        return dateCompare;
     }
 }

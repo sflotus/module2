@@ -80,6 +80,7 @@ public class EmployeeService implements IEmployeeService {
         while (flag);
         Employee employee = new Employee(cmnd, phoneNumber, name, sex, email, id, dateOfBirth, level, position, salary);
         employeeRepository.add(employee);
+        System.out.println("------Add New Employee Successful-------");
     }
 
     public void editByID() {

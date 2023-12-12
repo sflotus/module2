@@ -167,14 +167,24 @@ public class FuramaController {
             value = checkInputValue();
             switch (value) {
                 case 1:
+                    System.out.println("-----------Add new booking------------");
+                    bookingService.add();
                     break;
                 case 2:
+                    System.out.println("-----------Display list booking ------------");
+                    bookingService.diplayAll();
                     break;
                 case 3:
+                    System.out.println("-----------Create new contracts ------------");
+                    contractService.add();
                     break;
                 case 4:
+                    System.out.println("-----------Display list contracts ------------");
+                    contractService.diplayAll();
                     break;
                 case 5:
+                    System.out.println("-----------Edit contracts ------------");
+                    contractService.editByID();
                     break;
                 default:
                     flag = false;

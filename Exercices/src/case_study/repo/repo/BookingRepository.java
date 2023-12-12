@@ -6,15 +6,17 @@ import case_study.util.ReadAndWriteFileCSV;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class BookingRepository implements IBookingRepository<Booking> {
     private static final String BOOKING_DATA = "case_study/data/booking.csv";
 
 
     @Override
-    public List<Booking> getAll() {
+    public Set<Booking> getAll() {
         List<String> stringList = ReadAndWriteFileCSV.readfileCSV(BOOKING_DATA);
-        List<Booking> bookingList = new ArrayList<>();
+        Set<Booking> bookingList = new TreeSet<>();
         String[] array;
         for (String string : stringList) {
             array = string.split(",");
@@ -28,35 +30,15 @@ public class BookingRepository implements IBookingRepository<Booking> {
     @Override
     public void add(Booking booking) {
         List<String> stringList = new ArrayList<>();
-        stringList.add(booking.getInforToCSV());
-        ReadAndWriteFileCSV.writeListStringToCSV(BOOKING_DATA, stringList, true);
-    }
-
-    @Override
-    public void remove(int index) {
-        List<String> stringList = new ArrayList<>();
-        List<Booking> bookingList = getAll();
-        for (int i = 0; i < bookingList.size(); i++) {
-            if (i != index) {
-                stringList.add(bookingList.get(i).getInforToCSV());
-            }
+        Set<Booking> bookingSet = getAll();
+        bookingSet.add(booking);
+        for (Booking b : bookingSet) {
+            stringList.add(b.getInforToCSV());
         }
-        ReadAndWriteFileCSV.writeListStringToCSV(BOOKING_DATA,stringList,false);
+        ReadAndWriteFileCSV.writeListStringToCSV(BOOKING_DATA, stringList, false);
     }
-
     @Override
-    public int searchByID(String idBooking) {
-        List<Booking> bookingList = getAll();
-        for (int i =0; i <bookingList.size();i++){
-            if (bookingList.get(i).getIdBooking().equals(idBooking)){
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    @Override
-    public void update(List<Booking> bookingList) {
+    public void update(Set<Booking> bookingList) {
         List<String> stringList = new ArrayList<>();
 //        ReadAndWriteFileCSV.deleteDataFile(BOOKING_DATA);
         for (Booking booking:bookingList) {

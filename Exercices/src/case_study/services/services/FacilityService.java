@@ -19,6 +19,10 @@ public class FacilityService implements IFacilityService {
     private final static String REGEX_HOUSE = "[S][V][H][O][-]*(\\d{4})";
     private final static String REGEX_ROOM = "[S][V][R][O][-]*(\\d{4})";
     private final static String REGEX_NAMES_SERVICES = "^[A-Z][a-z ]*$";
+    private final static String REGEX_RENTAL_TYPE = "^[A-Z][a-z ]*$";
+
+    private final static String REGEX_ROOM_STANDARD = "^[A-Z][a-z ]*$";
+
 
     Scanner scanner = new Scanner(System.in);
     private IFacilityRepository facilityRepository = new FacilityRepository();
@@ -44,12 +48,15 @@ public class FacilityService implements IFacilityService {
             switch (value) {
                 case 1:
                     facilityRepository.add(addNewVilla());
+                    System.out.println("-------Add New Villa Successful-------");
                     break;
                 case 2:
                     facilityRepository.add(addNewHouse());
+                    System.out.println("------Add New House Successful-------");
                     break;
                 case 3:
                     facilityRepository.add(addNewRoom());
+                    System.out.println("-----Add New Room Successful-------");
                     break;
                 default:
                     flag = false;
@@ -71,227 +78,187 @@ public class FacilityService implements IFacilityService {
     private Facility addNewVilla() {
         boolean flag;
         System.out.println("Input Villa's ID Service ");
-        String idService = null;
+        String idService;
         do {
             flag = false;
-            try {
-                idService = inputId(REGEX_VILLA);
-                if (checkExistFacilityId(idService)) {
-                    System.out.println("Error, Id has Exits, Try again");
-                    flag = true;
-                }
-            } catch (FuramaExeption e) {
-                System.out.println(e.getMessage());
+            idService = inputValueWithRegex(REGEX_VILLA, "Error! format of Villa's Id Service is SVVL-YYYY Y from 0 to 9");
+            if (checkExistFacilityId(idService)) {
+                System.out.println("Error, Id has Exits, Try again");
                 flag = true;
             }
         } while (flag);
         System.out.println(" Input Villa's Name Service ");
-        String nameSerivce = null;
-        do {
-            flag = false;
-            try {
-                nameSerivce = inputName(REGEX_NAMES_SERVICES);
-            } catch (FuramaExeption e) {
-                System.out.println(e.getMessage());
-                flag = true;
-            }
-        } while (flag);
+        String nameSerivce = inputValueWithRegex(REGEX_NAMES_SERVICES, "Error! Facility's name service must be UpperCase the 1st letter, try again.");
         System.out.println("Input Villa's using area");
         double usingArea;
         do {
             flag = false;
-            usingArea=inputValueDouble();
-            if (!(usingArea >30)){
+            usingArea = inputValueDouble();
+            if (!(usingArea > 30)) {
                 System.out.println("Error, Using area must > 30, try again");
-                flag=true;
+                flag = true;
             }
-        }while (flag);
+        } while (flag);
         System.out.println("Input Villa's price for rent");
         double priceForRent;
         do {
             flag = false;
-            priceForRent=inputValueDouble();
-            if (!(priceForRent >0)){
+            priceForRent = inputValueDouble();
+            if (!(priceForRent > 0)) {
                 System.out.println("Error, Price for rent  must > 0, try again");
-                flag=true;
+                flag = true;
             }
-        }while (flag);
+        } while (flag);
         System.out.println("Input max Number People");
         int maxNumPeople;
         do {
             flag = false;
-            maxNumPeople=inputValueInt();
-            if (maxNumPeople<=0||maxNumPeople>=20){
+            maxNumPeople = inputValueInt();
+            if (maxNumPeople <= 0 || maxNumPeople >= 20) {
                 System.out.println("Error, Maximum number is between 0 and 20, try again");
-                flag=true;
+                flag = true;
             }
-        }while (flag);
+        } while (flag);
         System.out.println("Input rentalType");
-        String rentalType = scanner.nextLine();
+        String rentalType = inputValueWithRegex(REGEX_RENTAL_TYPE, "Error! Rental Type must be UpperCase the 1st letter, try again.");
         System.out.println("Input Villa's room standard");
-        String roomStandard = scanner.nextLine();
+        String roomStandard = inputValueWithRegex(REGEX_ROOM_STANDARD, "Error! Room Standard must be UpperCase the 1st letter, try again.");
         System.out.println("Input Villa's pool area");
         double poolArea;
         do {
             flag = false;
-            poolArea=inputValueDouble();
-            if (!(poolArea >30)){
+            poolArea = inputValueDouble();
+            if (!(poolArea > 30)) {
                 System.out.println("Error, pool area must > 30, try again");
-                flag=true;
+                flag = true;
             }
-        }while (flag);
+        } while (flag);
         System.out.println("Input Villa's quantity floor");
         int quantityFloor;
         do {
             flag = false;
-            quantityFloor=inputValueInt();
-            if (!(quantityFloor >0)){
+            quantityFloor = inputValueInt();
+            if (!(quantityFloor > 0)) {
                 System.out.println("Error, Quantity flor must > 0, try again");
-                flag=true;
+                flag = true;
             }
-        }while (flag);
+        } while (flag);
         return new Villa(idService, nameSerivce, usingArea, priceForRent, maxNumPeople, rentalType, roomStandard, poolArea, quantityFloor);
 
     }
 
-    private Facility addNewHouse(){
+    private Facility addNewHouse() {
         boolean flag;
         System.out.println("Input House's ID Service ");
         String idService = null;
         do {
             flag = false;
-            try {
-                idService = inputId(REGEX_HOUSE);
-                if (checkExistFacilityId(idService)) {
-                    System.out.println("Error, Id has Exits, Try again");
-                    flag = true;
-                }
-            } catch (FuramaExeption e) {
-                System.out.println(e.getMessage());
+            idService = inputValueWithRegex(REGEX_HOUSE, "Error! format of House's Id Service is SVHO-YYYY Y from 0 to 9");
+            if (checkExistFacilityId(idService)) {
+                System.out.println("Error, Id has Exits, Try again");
                 flag = true;
             }
         } while (flag);
         System.out.println(" Input House's Name Service ");
-        String nameSerivce = null;
-        do {
-            flag = false;
-            try {
-                nameSerivce = inputName(REGEX_NAMES_SERVICES);
-            } catch (FuramaExeption e) {
-                System.out.println(e.getMessage());
-                flag = true;
-            }
-        } while (flag);
+        String nameSerivce = inputValueWithRegex(REGEX_NAMES_SERVICES, "Error! Facility's name service must be UpperCase the 1st letter, try again.");
         System.out.println("Input House's using area");
         double usingArea;
         do {
             flag = false;
-            usingArea=inputValueDouble();
-            if (!(usingArea >30)){
+            usingArea = inputValueDouble();
+            if (!(usingArea > 30)) {
                 System.out.println("Error, Using area must > 30, try again");
-                flag=true;
+                flag = true;
             }
-        }while (flag);
+        } while (flag);
         System.out.println("Input House's price for rent");
         double priceForRent;
         do {
             flag = false;
-            priceForRent=inputValueDouble();
-            if (!(priceForRent >0)){
+            priceForRent = inputValueDouble();
+            if (!(priceForRent > 0)) {
                 System.out.println("Error, Price for rent  must > 0, try again");
-                flag=true;
+                flag = true;
             }
-        }while (flag);
+        } while (flag);
         System.out.println("Input max Number People");
         int maxNumPeople;
         do {
             flag = false;
-            maxNumPeople=inputValueInt();
-            if (maxNumPeople<=0||maxNumPeople>=20){
+            maxNumPeople = inputValueInt();
+            if (maxNumPeople <= 0 || maxNumPeople >= 20) {
                 System.out.println("Error, Maximum number is between 0 and 20, try again");
-                flag=true;
+                flag = true;
             }
-        }while (flag);
+        } while (flag);
         System.out.println("Input House's rentalType");
-        String rentalType = scanner.nextLine();
+        String rentalType = inputValueWithRegex(REGEX_RENTAL_TYPE, "Error! Rental Type must be UpperCase the 1st letter, try again.");
         System.out.println("Input House's room standard");
-        String roomStandard = scanner.nextLine();
+        String roomStandard = inputValueWithRegex(REGEX_ROOM_STANDARD, "Error! Room Standard must be UpperCase the 1st letter, try again.");
         System.out.println("Input House's quantity floor");
         int quantityFloor;
         do {
             flag = false;
-            quantityFloor=inputValueInt();
-            if (!(quantityFloor >0)){
+            quantityFloor = inputValueInt();
+            if (!(quantityFloor > 0)) {
                 System.out.println("Error, Quantity flor must > 0, try again");
-                flag=true;
+                flag = true;
             }
-        }while (flag);
+        } while (flag);
         return new House(idService, nameSerivce, usingArea, priceForRent, maxNumPeople, rentalType, roomStandard, quantityFloor);
     }
-    private Facility addNewRoom(){
+
+    private Facility addNewRoom() {
         boolean flag;
         System.out.println("Input Room's ID Service ");
         String idService = null;
         do {
             flag = false;
-            try {
-                idService = inputId(REGEX_ROOM);
-                if (checkExistFacilityId(idService)) {
-                    System.out.println("Error, Id has Exits, Try again");
-                    flag = true;
-                }
-            } catch (FuramaExeption e) {
-                System.out.println(e.getMessage());
+            idService = inputValueWithRegex(REGEX_ROOM, "Error! format of House's Id Service is SVRO-YYYY Y from 0 to 9");
+            if (checkExistFacilityId(idService)) {
+                System.out.println("Error, Id has Exits, Try again");
                 flag = true;
             }
         } while (flag);
         System.out.println(" Input Room's Name Service ");
-        String nameSerivce = null;
-        do {
-            flag = false;
-            try {
-                nameSerivce = inputName(REGEX_NAMES_SERVICES);
-            } catch (FuramaExeption e) {
-                System.out.println(e.getMessage());
-                flag = true;
-            }
-        } while (flag);
+        String nameSerivce = inputValueWithRegex(REGEX_NAMES_SERVICES, "Error! Facility's name service must be UpperCase the 1st letter, try again.");
         System.out.println("Input Room's using area");
         double usingArea;
         do {
             flag = false;
-            usingArea=inputValueDouble();
-            if (!(usingArea >30)){
+            usingArea = inputValueDouble();
+            if (!(usingArea > 30)) {
                 System.out.println("Error, Using area must > 30, try again");
-                flag=true;
+                flag = true;
             }
-        }while (flag);
+        } while (flag);
         System.out.println("Input Room's price for rent");
         double priceForRent;
         do {
             flag = false;
-            priceForRent=inputValueDouble();
-            if (!(priceForRent >0)){
+            priceForRent = inputValueDouble();
+            if (!(priceForRent > 0)) {
                 System.out.println("Error, Price for rent  must > 0, try again");
-                flag=true;
+                flag = true;
             }
-        }while (flag);
+        } while (flag);
         System.out.println("Input max Number People");
         int maxNumPeople;
         do {
             flag = false;
-            maxNumPeople=inputValueInt();
-            if (maxNumPeople<=0||maxNumPeople>=20){
+            maxNumPeople = inputValueInt();
+            if (maxNumPeople <= 0 || maxNumPeople >= 20) {
                 System.out.println("Error, Maximum number is between 0 and 20, try again");
-                flag=true;
+                flag = true;
             }
-        }while (flag);
+        } while (flag);
         System.out.println("Input Room's rentalType");
-        String rentalType = scanner.nextLine();
+        String rentalType = inputValueWithRegex(REGEX_RENTAL_TYPE, "Error! Rental Type must be UpperCase the 1st letter, try again.");
         System.out.println("Input Room's free service");
         String freeService = scanner.nextLine();
         return new Room(idService, nameSerivce, usingArea, priceForRent, maxNumPeople, rentalType, freeService);
     }
+
     private int inputValueInt() {
         int value = 0;
         boolean flag;
@@ -323,23 +290,18 @@ public class FacilityService implements IFacilityService {
         return value;
     }
 
-    private String inputId(String regex) throws FuramaExeption {
-        String Id = scanner.nextLine();
-        if (!Pattern.matches(regex, Id)) {
-            throw new FuramaExeption("Error! format of Facility's Id Service is SVXX-YYYY Y from 0 to 9\n" +
-                    "Villa-XX : VL\n" +
-                    "House-XX: HO\n" +
-                    "Room-XX: RO  ");
-        } else return Id;
-
-    }
-
-    private String inputName(String regex) throws FuramaExeption {
-        String name = scanner.nextLine();
-        if (!Pattern.matches(regex, name)) {
-            throw new FuramaExeption("Error! Facility's name service must be UpperCase the 1st letter, try again. ");
-        } else return name;
-
+    private String inputValueWithRegex(String regex, String errorMessage) {
+        String value;
+        boolean flag;
+        do {
+            flag = false;
+            value = scanner.nextLine();
+            if (!Pattern.matches(regex, value)) {
+                System.out.printf(errorMessage);
+                flag = true;
+            }
+        } while (flag);
+        return value;
     }
 
     private boolean checkExistFacilityId(String id) {

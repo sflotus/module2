@@ -105,6 +105,7 @@ public class CustomerService implements ICustomerService {
         String typeCustomer = inputTypeCustomer();
         Customer customer = new Customer(cmnd, phoneNumber, name, sex, email, customerId, dateOfBirth, adress, typeCustomer);
         customerRepository.add(customer);
+        System.out.println("-----Add New Customer Successful-------");
     }
 
     public void editByID() {
