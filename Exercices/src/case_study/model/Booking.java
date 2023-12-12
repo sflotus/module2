@@ -1,6 +1,5 @@
 package case_study.model;
 
-import java.util.Date;
 
 public class Booking implements Comparable<Booking> {
     private String idBooking, idCustomer, idService;
