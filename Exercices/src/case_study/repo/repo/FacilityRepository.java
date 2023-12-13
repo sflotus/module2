@@ -18,6 +18,7 @@ public class FacilityRepository implements IFacilityRepository<Facility> {
         List<String> stringList = ReadAndWriteFileCSV.readfileCSV(FACILITY_DATA);
         List<Facility> facilityList = new ArrayList<>();
         String[] array;
+
         for (String string : stringList) {
             array = string.split(",");
             if (array[0].contains("SVVL")) {
