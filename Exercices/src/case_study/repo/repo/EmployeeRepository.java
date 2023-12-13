@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeRepository implements IEmployeeRepository<Employee> {
-    private static final String EMPLOYEE_DATA="case_study/data/person/employee.csv";
+    private final String EMPLOYEE_DATA = "case_study/data/person/employee.csv";
 
 
     @Override
@@ -33,7 +33,6 @@ public class EmployeeRepository implements IEmployeeRepository<Employee> {
     }
     public void update(List<Employee> employee){
         List<String> stringList = new ArrayList<>();
-//        ReadAndWriteFileCSV.deleteDataFile(EMPLOYEE_DATA);
         for (Employee e:employee) {
             stringList.add(e.getInforToCSV());
         }

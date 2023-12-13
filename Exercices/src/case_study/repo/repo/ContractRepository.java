@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContractRepository implements IContractRepository<Contract> {
-    private static final String CONTRACT_DATA = "case_study/data/booking.csv";
+    private final String CONTRACT_DATA = "case_study/data/contract.csv";
 
     @Override
     public List<Contract> getAll() {
@@ -53,8 +53,12 @@ public class ContractRepository implements IContractRepository<Contract> {
     }
 
     @Override
-    public void update(List<Contract> t) {
-
+    public void update(List<Contract> contractList) {
+        List<String> stringList = new ArrayList<>();
+        for (Contract contract : contractList) {
+            stringList.add(contract.getInforToCSV());
+        }
+        ReadAndWriteFileCSV.writeListStringToCSV(CONTRACT_DATA, stringList, false);
     }
 
 

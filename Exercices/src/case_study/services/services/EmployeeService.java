@@ -8,18 +8,19 @@ import case_study.services.interface_services.IEmployeeService;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class EmployeeService implements IEmployeeService {
-    private final static String ID_EMPLOYEE_REGEX = "[N][V][-]*(\\d{4})";
-    private final static String NAME_EMPLOYEE_REGEX = "\\b[A-Z][a-z]*(?:\\s+[A-Z][a-z]*)*\\b";
-    private final static String PHONE_NUMBER_REGEX = "([0])+([0-9]{9})";
-    private final static String CMND_REGEX = "^\\d{9}(?:\\d{3})?$";
-    private final static String DATE_OF_BIRTH_EREGEX = "^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01])$";
-    private final static String EMAIL_REGEX = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+    private final String ID_EMPLOYEE_REGEX = "[N][V][-]*(\\d{4})";
+    private final String NAME_EMPLOYEE_REGEX = "\\b[A-Z][a-z]*(?:\\s+[A-Z][a-z]*)*\\b";
+    private final String PHONE_NUMBER_REGEX = "([0])+([0-9]{9})";
+    private final String CMND_REGEX = "^\\d{9}(?:\\d{3})?$";
+    private final String DATE_OF_BIRTH_EREGEX = "((18|19|20)[0-9]{2}[\\-.](0[13578]|1[02])[\\-.](0[1-9]|[12][0-9]|3[01]))|(18|19|20)" +
+            "[0-9]{2}[\\-.](0[469]|11)[\\-.](0[1-9]|[12][0-9]|30)|(18|19|20)[0-9]{2}[\\-.]" +
+            "(02)[\\-.](0[1-9]|1[0-9]|2[0-8])|(((18|19|20)(04|08|[2468][048]|[13579][26]))|2000)[\\-.](02)[\\-.]29";
+    private final String EMAIL_REGEX = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
     Scanner scanner = new Scanner(System.in);
     private IEmployeeRepository employeeRepository = new EmployeeRepository();
 
@@ -224,17 +225,12 @@ public class EmployeeService implements IEmployeeService {
         if (!Pattern.matches(DATE_OF_BIRTH_EREGEX, date)) {
             throw new FuramaExeption("Error! Date's format is yyyy-mm-dd, try again ");
         } else {
-            try {
                 LocalDate birthDate = LocalDate.parse(date);
                 LocalDate now = LocalDate.now();
                 age = Period.between(birthDate, now).getYears();
                 if (age > 18) {
                     return date;
                 } else throw new FuramaExeption("Employee is under 18 year olds, try again");
-            } catch (DateTimeParseException e) {
-                throw new FuramaExeption("Error! Date's format is yyyy-mm-dd, try again ");
-            }
-
         }
     }
 

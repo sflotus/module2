@@ -65,6 +65,7 @@ public class Booking implements Comparable<Booking> {
         return idBooking+","+idCustomer+","+idService+","+dateStart+","+dateEnd;
     }
 
+
     @Override
     public int compareTo(Booking booking) {
         int dateCompare = booking.dateStart.compareTo(this.dateStart);

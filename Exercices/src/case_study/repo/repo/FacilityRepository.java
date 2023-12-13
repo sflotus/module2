@@ -4,7 +4,6 @@ import case_study.model.facility.Facility;
 import case_study.model.facility.House;
 import case_study.model.facility.Room;
 import case_study.model.facility.Villa;
-import case_study.model.person.Employee;
 import case_study.repo.interface_repo.IFacilityRepository;
 import case_study.util.ReadAndWriteFileCSV;
 
@@ -12,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FacilityRepository implements IFacilityRepository<Facility> {
-    private static final String FACILITY_DATA = "case_study/data/facility/facility.csv";
+    private final String FACILITY_DATA = "case_study/data/facility/facility.csv";
 
     @Override
     public List<Facility> getAll() {

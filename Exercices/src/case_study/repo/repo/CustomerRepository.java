@@ -1,7 +1,6 @@
 package case_study.repo.repo;
 
 import case_study.model.person.Customer;
-import case_study.model.person.Employee;
 import case_study.repo.interface_repo.ICustomerRepository;
 import case_study.util.ReadAndWriteFileCSV;
 
@@ -9,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerRepository implements ICustomerRepository<Customer> {
-    private static final String CUSTOMER_DATA = "case_study/data/person/customer.csv";
+    private final String CUSTOMER_DATA = "case_study/data/person/customer.csv";
 
     @Override
     public List<Customer> getAll() {

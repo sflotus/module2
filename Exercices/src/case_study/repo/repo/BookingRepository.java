@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class BookingRepository implements IBookingRepository<Booking> {
-    private static final String BOOKING_DATA = "case_study/data/booking.csv";
+    private final String BOOKING_DATA = "case_study/data/booking.csv";
 
 
     @Override

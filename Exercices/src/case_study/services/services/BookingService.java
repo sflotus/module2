@@ -3,8 +3,6 @@ package case_study.services.services;
 import case_study.model.Booking;
 import case_study.model.facility.Facility;
 import case_study.model.person.Customer;
-import case_study.model.person.Employee;
-import case_study.repo.IRepository;
 import case_study.repo.interface_repo.IBookingRepository;
 import case_study.repo.repo.BookingRepository;
 import case_study.repo.repo.CustomerRepository;
@@ -17,7 +15,8 @@ import java.util.Set;
 import java.util.regex.Pattern;
 
 public class BookingService implements IBookingService {
-  private final static String DATE_REGEX = "^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01])$";
+  private final String REGEX_DATE = "^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01])$";
+  private final String REGEX_ID_BOOKING = "[B][K][-]*(\\d{4})";
   Scanner scanner = new Scanner(System.in);
   private IBookingRepository bookingRepository = new BookingRepository();
 
@@ -32,17 +31,18 @@ public class BookingService implements IBookingService {
   @Override
   public void add() {
     System.out.println("Input ID Booking");
-    String idBooking = scanner.nextLine();
+    String idBooking = inputValueWithRegex(REGEX_ID_BOOKING, "Invalid Id, right format is CT-YYYY Y from 0 to 9");
     System.out.println("Choose ID customer");
     String idCustomer = inputIdCustomer();
     System.out.println("Choose ID service");
     String idService = inputIdService();
     System.out.println("Input Date Start");
-    String dateStart = inputValueWithRegex(DATE_REGEX, "Invalid data, right format is yyyy-mm-dd");
+    String dateStart = inputValueWithRegex(REGEX_DATE, "Invalid date, right format is yyyy-mm-dd");
     System.out.println("Input Date End");
-    String dateEnd = inputValueWithRegex(DATE_REGEX, "Invalid data, right format is yyyy-mm-dd");
+    String dateEnd = inputValueWithRegex(REGEX_DATE, "Invalid date, right format is yyyy-mm-dd");
     Booking booking = new Booking(idBooking, idService, idCustomer, dateStart, dateEnd);
     bookingRepository.add(booking);
+
     System.out.println("--------Add New Booking Successful-------");
   }
 
@@ -83,8 +83,10 @@ public class BookingService implements IBookingService {
     FacilityRepository facilityRepository = new FacilityRepository();
     List<Facility> facilityList = facilityRepository.getAll();
     System.out.println("List Id Service");
+    int i = 0;
     for (Facility facility : facilityList) {
-      System.out.println(facility.getIdServices());
+      System.out.println((i + 1) + ": " + facility.getIdServices() + " - " + facility.getNameServices());
+      i++;
     }
     System.out.println("Input number to choose Id Facility to booking");
     int index;

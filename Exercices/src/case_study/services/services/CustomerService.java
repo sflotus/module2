@@ -1,7 +1,6 @@
 package case_study.services.services;
 
 import case_study.model.person.Customer;
-import case_study.model.person.Employee;
 import case_study.repo.interface_repo.ICustomerRepository;
 import case_study.repo.repo.CustomerRepository;
 import case_study.services.FuramaExeption;
@@ -15,6 +14,11 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class CustomerService implements ICustomerService {
+    private final String REGEX_ID_CUSTOMER = "[K][H][-]*(\\d{4})";
+    private final String REGEX_NAME_CUSTOMER = "\\b[A-Z][a-z]*(?:\\s+[A-Z][a-z]*)*\\b";
+    private final String REGEX_PHONE_NUMBER = "(|0[3|5|7|8|9])+([0-9]{10})";
+    private final String REGEX_CMND = "^\\d{9}(?:\\d{3})?$";
+    private final String REGEX_EMAIL = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
     Scanner scanner = new Scanner(System.in);
     private ICustomerRepository customerRepository = new CustomerRepository();
 
@@ -31,63 +35,22 @@ public class CustomerService implements ICustomerService {
         String customerId = null;
         do {
             flag = false;
-            try {
-                customerId = inputId();
-                if (checkExistCustomerId(customerId)) {
-                    flag = true;
-                    System.out.println("Error, Id customer has exist, try again.");
-                }
-            } catch (FuramaExeption e) {
-                System.out.println(e.getMessage());
+            customerId = inputValueWithRegex(REGEX_ID_CUSTOMER, "Error! format of Customer's Id is KH-XXXX X from 0 to 9, try again.");
+            if (checkExistCustomerId(customerId)) {
                 flag = true;
+                System.out.println("Error, Id customer has exist, try again.");
             }
         } while (flag);
         System.out.println(" Input Customer's CMND ");
-        String cmnd = null;
-        do {
-            flag = false;
-            try {
-                cmnd = inputCmnd();
-            } catch (FuramaExeption e) {
-                System.out.println(e.getMessage());
-                flag = true;
-            }
-        } while (flag);
+        String cmnd = inputValueWithRegex(REGEX_CMND, "Error! Customer's CMND has 9 or 12 numbers");
         System.out.println("Input Customer's phone number");
-        String phoneNumber = null;
-        do {
-            flag = false;
-            try {
-                phoneNumber = inputPhoneNumber();
-            } catch (FuramaExeption e) {
-                System.out.println(e.getMessage());
-                flag = true;
-            }
-        } while (flag);
+        String phoneNumber = inputValueWithRegex(REGEX_PHONE_NUMBER, "Error! Customer's phone number must begin 0 and has 10 char, try again. ");
         System.out.println("Input Customer's name");
-        String name = null;
-        do {
-            flag = false;
-            try {
-                name = inputName();
-            } catch (FuramaExeption e) {
-                System.out.println(e.getMessage());
-                flag = true;
-            }
-        } while (flag);
+        String name = inputValueWithRegex(REGEX_NAME_CUSTOMER, "Error! Customer's name must be UpperCase the 1st letter of each word, try again.");
         System.out.println("Input Customer's sex");
         String sex = scanner.nextLine();
         System.out.println("Input Customer's Email");
-        String email = null;
-        do {
-            flag = false;
-            try {
-                email = inputEmail();
-            } catch (FuramaExeption e) {
-                System.out.println(e.getMessage());
-                flag = true;
-            }
-        } while (flag);
+        String email = inputValueWithRegex(REGEX_EMAIL, "Error! Customer's email is not validated, try again");
         System.out.println("Input Customer's Date of birth");
         String dateOfBirth = null;
         do {
@@ -109,9 +72,9 @@ public class CustomerService implements ICustomerService {
     }
 
     public void editByID() {
+        showAllId();
         System.out.println("Input Customer's Id to edit Customer");
         String id = scanner.nextLine();
-        showAllId();
         if (customerRepository.searchByID(id) == -1) {
             System.out.println("Sorry, Customer has id: " + id + " is not exist");
         } else {
@@ -140,47 +103,23 @@ public class CustomerService implements ICustomerService {
             switch (value) {
                 case 1:
                     System.out.println("input New CMND");
-                    String newCmnd = null;
-                    do {
-                        tempFlag = false;
-                        try {
-                            newCmnd = inputCmnd();
-                        } catch (FuramaExeption e) {
-                            System.out.println(e.getMessage());
-                            tempFlag = true;
-                        }
-                    } while (tempFlag);
+                    String newCmnd = inputValueWithRegex(REGEX_CMND, "Error! Customer's CMND has 9 or 12 numbers");
+
                     list.get(index).setCMND(newCmnd);
                     System.out.println("Edit CMND successful");
                     break;
                 case 2:
                     System.out.println("input New phone number");
-                    String newPhoneNumber = null;
-                    do {
-                        tempFlag = false;
-                        try {
-                            newPhoneNumber = inputPhoneNumber();
-                        } catch (FuramaExeption e) {
-                            System.out.println(e.getMessage());
-                            tempFlag = true;
-                        }
-                    } while (tempFlag);
+                    String newPhoneNumber = inputValueWithRegex(REGEX_PHONE_NUMBER, "Error! Customer's phone number must begin 0 and has 10 char, try again. ");
+                    ;
                     list.get(index).setPhoneNumber(newPhoneNumber);
                     System.out.println("Edit phone number successful");
 
                     break;
                 case 3:
                     System.out.println("input New Name");
-                    String newName = null;
-                    do {
-                        tempFlag = false;
-                        try {
-                            newName = inputName();
-                        } catch (FuramaExeption e) {
-                            System.out.println(e.getMessage());
-                            tempFlag = true;
-                        }
-                    } while (tempFlag);
+                    String newName = inputValueWithRegex(REGEX_NAME_CUSTOMER, "Error! Customer's name must be UpperCase the 1st letter of each word, try again.");
+                    ;
                     list.get(index).setName(newName);
                     System.out.println("Edit Name successful");
 
@@ -194,16 +133,7 @@ public class CustomerService implements ICustomerService {
                     break;
                 case 5:
                     System.out.println("input New Email");
-                    String newEmail = null;
-                    do {
-                        tempFlag = false;
-                        try {
-                            newEmail = inputEmail();
-                        } catch (FuramaExeption e) {
-                            System.out.println(e.getMessage());
-                            tempFlag=true;
-                        }
-                    } while (tempFlag);
+                    String newEmail = inputValueWithRegex(REGEX_EMAIL, "Error! Customer's email is not validated, try again");
                     list.get(index).setEmail(newEmail);
                     System.out.println("Edit Date of birth successful");
 
@@ -242,6 +172,7 @@ public class CustomerService implements ICustomerService {
             }
         }
         while (flag);
+        customerRepository.update(list);
     }
 
     private int inputValueInt() {
@@ -259,45 +190,11 @@ public class CustomerService implements ICustomerService {
 
         return value;
     }
-
-    private String inputId() throws FuramaExeption {
-        String Id = scanner.nextLine();
-        String regex = "[K][H][-]*(\\d{4})";
-        if (!Pattern.matches(regex, Id)) {
-            throw new FuramaExeption("Error! format of Customer's Id is KH-XXXX X from 0 to 9, try again.");
-        } else return Id;
-
-    }
-
-    private String inputName() throws FuramaExeption {
-        String name = scanner.nextLine();
-        String regex = "\\b[A-Z][a-z]*(?:\\s+[A-Z][a-z]*)*\\b";
-        if (!Pattern.matches(regex, name)) {
-            throw new FuramaExeption("Error! Customer's name must be UpperCase the 1st letter of each word, try again. ");
-        } else return name;
-
-    }
-
-    private String inputPhoneNumber() throws FuramaExeption {
-        String phoneNumber = scanner.nextLine();
-        String regex = "(|0[3|5|7|8|9])+([0-9]{10})";
-        if (!Pattern.matches(regex, phoneNumber)) {
-            throw new FuramaExeption("Error! Customer's phone number must begin 0 and has 10 char, try again. ");
-        } else return phoneNumber;
-
-    }
-
-    private String inputCmnd() throws FuramaExeption {
-        String cmnd = scanner.nextLine();
-        String regex = "^\\d{9}(?:\\d{3})?$";
-        if (!Pattern.matches(regex, cmnd)) {
-            throw new FuramaExeption("Error! Customer's CMND has 9 or 12 numbers ");
-        } else return cmnd;
-    }
-
     private String inputDate() throws FuramaExeption {
         String date = scanner.nextLine();
-        String regex = "^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01])$";
+        String regex = "((18|19|20)[0-9]{2}[\\-.](0[13578]|1[02])[\\-.](0[1-9]|[12][0-9]|3[01]))|(18|19|20)" +
+                "[0-9]{2}[\\-.](0[469]|11)[\\-.](0[1-9]|[12][0-9]|30)|(18|19|20)[0-9]{2}[\\-.]" +
+                "(02)[\\-.](0[1-9]|1[0-9]|2[0-8])|(((18|19|20)(04|08|[2468][048]|[13579][26]))|2000)[\\-.](02)[\\-.]29";
         int age;
         if (!Pattern.matches(regex, date)) {
             throw new FuramaExeption("Error! Date's format is yyyy-mm-dd, try again ");
@@ -310,17 +207,10 @@ public class CustomerService implements ICustomerService {
             } else throw new FuramaExeption("Customer is under 18 year olds, try again");
         }
     }
-    private String inputEmail() throws FuramaExeption{
-        String email = scanner.nextLine();
-        String regex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
-        if (!Pattern.matches(regex, email)) {
-            throw new FuramaExeption("Error! Customer's email is not validated, try again ");
-        } else return email;
-    }
     private void showAllId(){
-        List<Employee> employeeArrayList = customerRepository.getAll();
-        System.out.println("----------All Employee's Id-----------");
-        for (Employee e:employeeArrayList){
+        List<Customer> customerList = customerRepository.getAll();
+        System.out.println("----------All Customer's Id-----------");
+        for (Customer e : customerList) {
             System.out.println(e.getName()+": "+ e.getId());
         }
     }
@@ -363,4 +253,23 @@ public class CustomerService implements ICustomerService {
         }
         return false;
     }
+
+    private String inputValueWithRegex(String REGEX, String errorMessage) {
+        String value;
+        boolean flag;
+        do {
+            flag = false;
+            value = scanner.nextLine();
+            if (!checkRegex(REGEX, value)) {
+                System.out.println(errorMessage);
+                flag = true;
+            }
+        } while (flag);
+        return value;
+    }
+
+    private boolean checkRegex(String regex, String string) {
+        return Pattern.matches(regex, string);
+    }
+
 }

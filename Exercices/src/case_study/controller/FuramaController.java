@@ -63,7 +63,7 @@ public class FuramaController {
             System.out.println("-2. Add new employee                           -");
             System.out.println("-3. Edit employee                              -");
             System.out.println("-Other.Return main menu                        -");
-            System.out.printf("-------------------------------------------------");
+            System.out.println("-------------------------------------------------");
             value = checkInputValue();
             switch (value) {
                 case 1:

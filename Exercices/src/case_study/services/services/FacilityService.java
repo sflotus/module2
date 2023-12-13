@@ -4,10 +4,8 @@ import case_study.model.facility.Facility;
 import case_study.model.facility.House;
 import case_study.model.facility.Room;
 import case_study.model.facility.Villa;
-import case_study.model.person.Customer;
 import case_study.repo.interface_repo.IFacilityRepository;
 import case_study.repo.repo.FacilityRepository;
-import case_study.services.FuramaExeption;
 import case_study.services.interface_services.IFacilityService;
 
 import java.util.List;
@@ -15,13 +13,13 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class FacilityService implements IFacilityService {
-    private final static String REGEX_VILLA = "[S][V][V][L][-]*(\\d{4})";
-    private final static String REGEX_HOUSE = "[S][V][H][O][-]*(\\d{4})";
-    private final static String REGEX_ROOM = "[S][V][R][O][-]*(\\d{4})";
-    private final static String REGEX_NAMES_SERVICES = "^[A-Z][a-z ]*$";
-    private final static String REGEX_RENTAL_TYPE = "^[A-Z][a-z ]*$";
+    private final String REGEX_VILLA = "[S][V][V][L][-]*(\\d{4})";
+    private final String REGEX_HOUSE = "[S][V][H][O][-]*(\\d{4})";
+    private final String REGEX_ROOM = "[S][V][R][O][-]*(\\d{4})";
+    private final String REGEX_NAMES_SERVICES = "^[A-Z][a-z ]*$";
+    private final String REGEX_RENTAL_TYPE = "^[A-Z][a-z ]*$";
 
-    private final static String REGEX_ROOM_STANDARD = "^[A-Z][a-z ]*$";
+    private final String REGEX_ROOM_STANDARD = "^[A-Z][a-z ]*$";
 
 
     Scanner scanner = new Scanner(System.in);
