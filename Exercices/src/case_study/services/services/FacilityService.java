@@ -1,15 +1,16 @@
 package case_study.services.services;
 
+import case_study.model.Booking;
 import case_study.model.facility.Facility;
 import case_study.model.facility.House;
 import case_study.model.facility.Room;
 import case_study.model.facility.Villa;
 import case_study.repo.interface_repo.IFacilityRepository;
+import case_study.repo.repo.BookingRepository;
 import case_study.repo.repo.FacilityRepository;
 import case_study.services.interface_services.IFacilityService;
 
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class FacilityService implements IFacilityService {
@@ -69,6 +70,29 @@ public class FacilityService implements IFacilityService {
 
     @Override
     public void diplayFacilityMaintenance() {
+        BookingRepository bookingRepository = new BookingRepository();
+        //get list booking to get id facility
+        Set<Booking> bookingList = bookingRepository.getAll();
+        Map<String, Integer> facilityMaintenance = new HashMap<>();
+        for (Booking booking : bookingList) {
+            if (facilityMaintenance.containsKey(booking.getIdService())) {
+                int value = facilityMaintenance.get(booking.getIdService());
+                value++;
+                facilityMaintenance.put(booking.getIdService(), value);
+            } else facilityMaintenance.put(booking.getIdService(), 1);
+        }
+        //if idService >=6 then display it
+        boolean isExistFacilityMaintenance = false;
+        Set<String> keySet = facilityMaintenance.keySet();
+        for (String string : keySet) {
+            if (facilityMaintenance.get(string) >= 6) {
+                isExistFacilityMaintenance = true;
+                System.out.println(string + " -is booked " + facilityMaintenance.get(string) + " time");
+            }
+        }
+        if (!isExistFacilityMaintenance) {
+            System.out.println("There is no Facility need to be maintenance");
+        }
 
     }
 

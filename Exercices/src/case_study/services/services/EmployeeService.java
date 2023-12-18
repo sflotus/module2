@@ -14,8 +14,8 @@ import java.util.regex.Pattern;
 
 public class EmployeeService implements IEmployeeService {
     private final String ID_EMPLOYEE_REGEX = "[N][V][-]*(\\d{4})";
-    private final String NAME_EMPLOYEE_REGEX = "\\b[A-Z][a-z]*(?:\\s+[A-Z][a-z]*)*\\b";
-    private final String PHONE_NUMBER_REGEX = "([0])+([0-9]{9})";
+    private final String NAME_EMPLOYEE_REGEX = "^[A-Z][a-z]*(\\s[A-Z][a-z]*)+$";
+    private final String PHONE_NUMBER_REGEX = "^[0]\\d{9}$";
     private final String CMND_REGEX = "^\\d{9}(?:\\d{3})?$";
     private final String DATE_OF_BIRTH_EREGEX = "((18|19|20)[0-9]{2}[\\-.](0[13578]|1[02])[\\-.](0[1-9]|[12][0-9]|3[01]))|(18|19|20)" +
             "[0-9]{2}[\\-.](0[469]|11)[\\-.](0[1-9]|[12][0-9]|30)|(18|19|20)[0-9]{2}[\\-.]" +

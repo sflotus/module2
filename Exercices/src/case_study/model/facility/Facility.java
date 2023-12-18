@@ -8,6 +8,7 @@ public abstract class Facility {
     private int maxNumPeople;
     private String rentalType;
 
+
     public Facility() {
     }
 
@@ -31,6 +32,7 @@ public abstract class Facility {
     public String getNameServices() {
         return nameServices;
     }
+
 
     public void setNameServices(String nameServices) {
         this.nameServices = nameServices;
@@ -75,7 +77,7 @@ public abstract class Facility {
                 ", usingArea=" + usingArea +
                 ", price=" + price +" VND"+
                 ", maxNumPeople=" + maxNumPeople +
-                ", rentalType='" + rentalType ;
+                ", rentalType='" + rentalType;
     }
 
     public String getInforToCSV() {
